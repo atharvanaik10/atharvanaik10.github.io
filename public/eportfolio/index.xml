@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Eportfolios on Atharva Naik GLP Portfolio</title>
+    <link>http://localhost:1313/eportfolio/</link>
+    <description>Recent content in Eportfolios on Atharva Naik GLP Portfolio</description>
+    <generator>Hugo -- 0.125.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 May 2024 21:35:25 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/eportfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Appalachia</title>
+      <link>http://localhost:1313/eportfolio/appalachia/</link>
+      <pubDate>Fri, 03 May 2024 21:35:25 -0500</pubDate>
+      <guid>http://localhost:1313/eportfolio/appalachia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Testimonial</title>
+      <link>http://localhost:1313/eportfolio/testimonial/</link>
+      <pubDate>Fri, 03 May 2024 21:35:18 -0500</pubDate>
+      <guid>http://localhost:1313/eportfolio/testimonial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vctb</title>
+      <link>http://localhost:1313/eportfolio/vctb/</link>
+      <pubDate>Fri, 03 May 2024 21:35:12 -0500</pubDate>
+      <guid>http://localhost:1313/eportfolio/vctb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Igs</title>
+      <link>http://localhost:1313/eportfolio/igs/</link>
+      <pubDate>Fri, 03 May 2024 21:35:07 -0500</pubDate>
+      <guid>http://localhost:1313/eportfolio/igs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fall 2021 - Spring 2022: Student Retention and Engagement</title>
+      <link>http://localhost:1313/eportfolio/pdl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/eportfolio/pdl/</guid>
+      <description>During my second year in GLP, I had the chance to apply HCD internally to improve the program. As part of the Student Retention and Engagement committee, my task was to set up GLP for long-term success: make sure students stay in the program and find ways to recruit new students.
+In order to do this, my committee created a comprehensive marketing plan, along with laying the groundwork for an extensive social media presence.</description>
+    </item>
+    <item>
+      <title>Spring 2021: Champaign-Urbana Public Health District</title>
+      <link>http://localhost:1313/eportfolio/cuphd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/eportfolio/cuphd/</guid>
+      <description>During my first year in GLP (2020-2021), also the first-year of the program itself, my group was tasked with working with the Champaign-Urbana Public Health District (CUPHD) as our community sponsor. Our design challenge was to research and ideate best practices for building community capacity (using both local and international models) to address mental health during COVID-19, to determine what our next steps should be to build capacity for our community, by our community in CU.</description>
+    </item>
+    <item>
+      <title>Spring 2023: Annual Conference on the First-Year Experience</title>
+      <link>http://localhost:1313/eportfolio/fye/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/eportfolio/fye/</guid>
+      <description>In my junior year of GLP, I had the honor of being selected as one of three students in the program to present at the prestigous Annual Conference on the First-Year Experience hosted in Los Angeles by the University of South Carolina.</description>
+    </item>
+    <item>
+      <title>Spring 2024: LAS 195, LAS 399 Teaching Assistantship</title>
+      <link>http://localhost:1313/eportfolio/ta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/eportfolio/ta/</guid>
+      <description>For my capstone project, I served as the TA for the LAS 195 and LAS 399 GLP classes. I was the primary instructor for LAS 195 and handled all workshop logistics, grading, and project support. I also presented a 90-minute interactive workshop on tech for social good. For LAS 399, I facilitated in-class discussions and presented a 90-minute interactive professional interview workshop.
+Learnings as a TA Presentation skills by leading two workshops - one on Tech for Social Good and one on Professional Interviews.</description>
+    </item>
+  </channel>
+</rss>
