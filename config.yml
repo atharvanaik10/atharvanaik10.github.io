@@ -2,14 +2,3 @@ baseURL: https://example.org/
 languageCode: en-us
 title: "Atharva Naik GLP Portfolio"
 theme: ["PaperMod"]
-
-menu:
-    main:
-        - identifier: eportfolio
-          name: E-Portfolio
-          url: /eportfolio/
-          weight: 10
-        - identifier: projects
-          name: projects
-          url: /projects/
-          weight: 20
