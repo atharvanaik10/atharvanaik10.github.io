@@ -1,7 +1,7 @@
-+++
-title = 'Spring 2024: LAS 195, LAS 399 Teaching Assistantship'
-draft = true
-+++
+---
+draft: true
+title: 'Spring 2024: LAS 195, LAS 399 Teaching Assistantship'
+---
 
 For my capstone project, I served as the TA for the LAS 195 and LAS 399 GLP classes. I was the primary instructor for LAS 195 and handled all workshop logistics, grading, and project support. I also presented a 90-minute interactive workshop on tech for social good. For LAS 399, I facilitated in-class discussions and presented a 90-minute interactive professional interview workshop.
 

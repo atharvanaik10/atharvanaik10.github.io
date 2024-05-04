@@ -1,7 +1,7 @@
-+++
-title = 'Fall 2021 - Spring 2022: Student Retention and Engagement'
-draft = true
-+++
+---
+draft: true
+title: 'Fall 2021 - Spring 2022: Student Retention and Engagement'
+---
 
 During my second year in GLP, I had the chance to apply HCD internally to improve the program. As part of the Student Retention and Engagement committee, my task was to set up GLP for long-term success: make sure students stay in the program and find ways to recruit new students.
 

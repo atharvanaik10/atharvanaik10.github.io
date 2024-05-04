@@ -1,7 +1,7 @@
-+++
-title = 'Spring 2021: Champaign-Urbana Public Health District'
-draft = true
-+++
+---
+draft: true
+title: 'Spring 2021: Champaign-Urbana Public Health District'
+---
 
 During my first year in GLP (2020-2021), also the first-year of the program itself, my group was tasked with working with the Champaign-Urbana Public Health District (CUPHD) as our community sponsor. Our design challenge was to research and ideate best practices for building community capacity (using both local and international models) to address mental health during COVID-19, to determine what our next steps should be to build capacity for our community, by our community in CU.
 
