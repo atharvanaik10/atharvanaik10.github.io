@@ -2,28 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://example.org/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://example.org/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/eportfolio/</loc>
+    <loc>https://example.org/eportfolio/</loc>
   </url><url>
-    <loc>http://localhost:1313/eportfolio/pdl/</loc>
-  </url><url>
-    <loc>http://localhost:1313/eportfolio/igs/</loc>
-  </url><url>
-    <loc>http://localhost:1313/eportfolio/cuphd/</loc>
-  </url><url>
-    <loc>http://localhost:1313/eportfolio/fye/</loc>
-  </url><url>
-    <loc>http://localhost:1313/eportfolio/vctb/</loc>
-  </url><url>
-    <loc>http://localhost:1313/eportfolio/grad_cert/</loc>
-  </url><url>
-    <loc>http://localhost:1313/eportfolio/ta/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-  </url><url>
-    <loc>http://localhost:1313/eportfolio/appalachia/</loc>
+    <loc>https://example.org/tags/</loc>
   </url>
 </urlset>
