@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --midnight: #0b1220;
+  --ink: #e9eef7;
+  --blue: #3b82f6;
+  --mint: #34d399;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Helvetica Neue", "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%, rgb(59 130 246 / 15%), transparent 38%),
+    radial-gradient(circle at 80% 0%, rgb(52 211 153 / 10%), transparent 28%),
+    linear-gradient(135deg, #020617, #0b1220 38%, #111827);
+  color: var(--ink);
+  scroll-behavior: smooth;
+}
+
+.glass {
+  background: rgb(15 23 42 / 60%);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgb(148 163 184 / 15%);
+  box-shadow: 0 10px 45px rgb(2 6 23 / 40%);
+}
+
+.section-title {
+  @apply text-2xl md:text-3xl font-bold tracking-tight text-white mb-6;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:border-blue-300/35 hover:shadow-blue-500/10;
+}
+
+.fade-in {
+  animation: fadeIn 0.85s ease-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
