@@ -9,4 +9,11 @@
   </div>
   <p class="mt-1 text-white/80">{exp.role}{exp.location ? ` • ${exp.location}` : ''}</p>
   <div class="mt-4 prose-lite">{@html exp.html}</div>
+  {#if exp.tech && exp.tech.length}
+    <div class="mt-4 flex flex-wrap gap-2">
+      {#each exp.tech as t}
+        <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-white/75">{t}</span>
+      {/each}
+    </div>
+  {/if}
 </article>

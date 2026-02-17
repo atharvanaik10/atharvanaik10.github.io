@@ -33,6 +33,10 @@ function parseExperiences(raw) {
       location: meta.location || '',
       period: meta.period || '',
       order: Number(meta.order ?? 0),
+      tech: (meta.tech || meta.skills || '')
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean),
       html: renderMarkdown(body)
     });
   }

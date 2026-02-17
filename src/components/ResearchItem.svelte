@@ -1,5 +1,5 @@
 <script>
-  export let item;
+  export let item
 </script>
 
 <article class="glass-card animate-float p-7">
@@ -7,6 +7,21 @@
     <h3 class="text-2xl font-bold">{item.name}</h3>
     <p class="text-sm text-primary">{item.period}</p>
   </div>
-  <p class="mt-1 text-white/80">{item.role}{item.location ? ` • ${item.location}` : ''}</p>
-  <div class="mt-4 prose-lite">{@html item.html}</div>
+  <p class="mt-1 text-white/80">
+    {item.role}{item.location ? ` • ${item.location}` : ''}
+  </p>
+  <div class="mt-4 prose-lite">
+    {@html item.html}
+  </div>
+  {#if item.tech && item.tech.length}
+    <div class="mt-4 flex flex-wrap gap-1">
+      {#each item.tech as t}
+        <span
+          class="rounded-full border border-white/15 px-3 py-1 text-xs
+          text-white/75">
+          {t}
+        </span>
+      {/each}
+    </div>
+  {/if}
 </article>

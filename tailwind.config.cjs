@@ -10,7 +10,7 @@ module.exports = {
 				tertiary: "#040B1A", // base background
 			},
 			fontFamily: {
-				sans: ["Helvetica Neue", "Helvetica"],
+				sans: ["Helvetica Neue"],
 			},
 			boxShadow: {
 				glow: "0 0 35px rgba(30, 185, 235, 0.25)",

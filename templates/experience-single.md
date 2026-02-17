@@ -6,6 +6,7 @@ Use this file format for all experiences in `src/content/experience.md`:
 Role: Job Title
 Location: City, State
 Period: Mon YYYY — Mon YYYY
+Skills: Python, PyTorch, FastAPI
 Order: 1
 
 - Bullet point describing impact
@@ -15,7 +16,7 @@ Order: 1
 Role: ...
 Location: ...
 Period: ...
+Skills: Go, Kubernetes
 Order: 2
 
 - Bullet...
-
