@@ -1,7 +1,7 @@
 ### GeoPi
 GitHub: https://github.com/atharvanaik10/GeoPi
 Image: /geopi.png
-Tech: Svelte, Cesium, Raspberry Pi
+Tech: Svelte, Cesium, Raspberry Pi, GNSS
 Order: 1
 
 A Cesium + Svelte data warehouse for Raspberry Pi-based GNSS systems.

@@ -116,13 +116,14 @@
       building reliable ML platforms, researching bias in language models, and
       combining mathematical rigor with product-minded execution.
     </p>
-    <div class="mt-6 grid gap-3 text-sm text-white/75 md:grid-cols-2">
-      <div class="rounded-xl border border-white/10 p-4">
+    <div class="mt-6 grid gap-3 text-sm text-white/75 md:grid-cols-1">
+      <!-- <div class="rounded-xl border border-white/10 p-4">
         Teaching Assistant: Artificial Intelligence, Discrete Mathematics,
         Compilers
-      </div>
+      </div> -->
       <div class="rounded-xl border border-white/10 p-4">
-        Skills: Java, C++, Python, Spark, FastAPI, React, Swift, Google Cloud
+        Skills: Python, Java, C++, Spark, FastAPI, React, Swift, Google Cloud,
+        AWS, Git, JIRA
       </div>
     </div>
   </div>
