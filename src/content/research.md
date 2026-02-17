@@ -1,16 +1,16 @@
-### OnCare Research Group
-Role: Graduate Researcher
-Location: Urbana, IL
-Period: Aug 2024 — Present
+### Examining Bias in LLM-Based Matchmaking
+Role: Thesis Research
+Location: OnCare Lab (Advisor: Professor Koustuv Saha)
+Period: Aug 2025 - Present
 Order: 1
 
-- Researching <a href="https://oncare.cs.illinois.edu" target="_blank" rel="noreferrer">AI bias and safety</a>, advised by <a href="https://koustuv.com/" target="_blank" rel="noreferrer">Prof. Koustuv Saha</a>.
+- Examining bias in LLM-based matchmaking evaluation using controlled experimental design with real-world profiles and evaluated guardrail-based prompting interventions designed to mitigate bias in language models
 
-### Algorithmic Game Theory Lab
-Role: Research Assistant
-Location: Urbana, IL
-Period: Jan 2025 — Present
+### ALMA: Active Law-enforcement Mixed-strategy Allocator
+Role: Graduate Researcher
+Location: Advisor: Professor Ruta Mehta
+Period: Aug 2025 - Present
 Order: 2
 
-- Working on <a href="https://rutamehta.cs.illinois.edu/" target="_blank" rel="noreferrer">Algorithmic Game Theory</a>, advised by Prof. Ruta Mehta.
+- Modeled police patrol allocation on the UIUC campus using 5 years of crime data to compute randomized (mixed-strategy) patrol routes achieving 20-50% higher crime prevention compared to uniformly random patrol baselines
 

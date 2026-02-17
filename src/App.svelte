@@ -14,9 +14,11 @@
       <div class="hidden gap-6 text-sm text-white/80 md:flex">
         <a href="#about" class="hover:text-electric transition">About</a>
         <a href="#research" class="hover:text-electric transition">Research</a>
-        <a href="#experience" class="hover:text-electric transition">Experience</a>
+        <a href="#experience" class="hover:text-electric transition">
+          Experience
+        </a>
         <a href="#projects" class="hover:text-electric transition">Projects</a>
-        <a href="#/blog" class="hover:text-electric transition">Blog</a>
+        <!-- <a href="#/blog" class="hover:text-electric transition">Blog</a> -->
       </div>
     </nav>
   </header>
