@@ -110,22 +110,9 @@
   <h2 class="section-heading">About</h2>
   <div class="glass-card p-8">
     <p class="text-white/85 leading-relaxed">
-      Currently pursuing an M.S. in Computer Science at the University of
-      Illinois Urbana-Champaign (Aug 2024 – May 2026), after completing a B.S.
-      in Mathematics & Computer Science with Highest Distinction. I enjoy
-      building reliable ML platforms, researching bias in language models, and
-      combining mathematical rigor with product-minded execution.
+      Skills: Python, Java, C++, Spark, FastAPI, React, Swift, Google Cloud,
+      AWS, Git, JIRA
     </p>
-    <div class="mt-6 grid gap-3 text-sm text-white/75 md:grid-cols-1">
-      <!-- <div class="rounded-xl border border-white/10 p-4">
-        Teaching Assistant: Artificial Intelligence, Discrete Mathematics,
-        Compilers
-      </div> -->
-      <div class="rounded-xl border border-white/10 p-4">
-        Skills: Python, Java, C++, Spark, FastAPI, React, Swift, Google Cloud,
-        AWS, Git, JIRA
-      </div>
-    </div>
   </div>
 </section>
 
