@@ -15,19 +15,18 @@ Hugo has been removed from this repo. The GLP ePortfolio content has been preser
 
 - Markdown posts: `src/content/glp/*.md`
 - Linked assets (images, PDFs): `public/` (same filenames as before, e.g. `/appalachia_1.JPG`)
+  
+Renamed to: `src/content/blog/*.md` (all preserved posts moved).
 
-Planned approach to enable a blog (options):
+Navigation:
 
-- Minimal: render a simple list with hardcoded links and copy post content into Svelte components.
-- Markdown-based: integrate a Markdown pipeline (e.g., `mdsvex` or `markdown-it`) to render posts from `src/content/glp`.
+- Blog index: `#/blog`
+- Post page: `#/blog/<slug>`
 
-Suggested next step (recommended):
+Implementation details:
 
-1. Install `mdsvex` and configure it with Svelte + Vite.
-2. Convert the GLP Markdown files to `.svx` or keep as `.md` with `mdsvex` support.
-3. Create a `Blog` section (or route) that lists posts and renders them.
-
-Note: The top nav contains a temporary "Blog" anchor and placeholder section.
+- Minimal Markdown pipeline (no extra deps) in `src/lib` renders headings, lists, links, images, and code blocks.
+- Hash-based routing via `src/lib/Router.svelte` serves separate pages for Home, Blog, and Post.
 
 ## Local development
 
@@ -63,10 +62,49 @@ Your site URL should be:
 
 ## Customizing content
 
-Edit `src/App.svelte` to update:
+Edit `src/pages/Home.svelte` to update:
 
 - Experience entries
 - Projects
 - About bio
 - Contact links
- - Blog content in `src/content/glp` (optional)
+
+Blog content lives in `src/content/glp` (edit Markdown files). The Blog index and Post pages are in `src/pages/BlogIndex.svelte` and `src/pages/Post.svelte`.
+
+## Content-driven Experience and Projects
+
+Add entries by creating Markdown files in:
+
+- Experience: `src/content/experience/*.md`
+- Projects: `src/content/projects/*.md`
+
+Experience format (frontmatter + bullet list):
+
+---
+company: 'Company Name'
+role: 'Job Title'
+location: 'City, State'
+period: 'Mon YYYY — Mon YYYY'
+order: 1
+---
+
+- Impact bullet 1
+- Impact bullet 2
+
+Project format:
+
+---
+name: 'Project Name'
+github: 'https://github.com/username/repo'
+image: '/path-in-public/example.png'
+tech: ['Tech1', 'Tech2']
+order: 1
+---
+
+Short description paragraph.
+
+Templates are available in `templates/experience-template.md` and `templates/project-template.md`.
+
+Notes:
+- Images referenced by `image` should live under `public/`.
+- Experiences and projects are sorted by `order` (ascending).
