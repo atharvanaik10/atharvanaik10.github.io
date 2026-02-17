@@ -18,6 +18,15 @@
     blur-3xl" />
 
   <!-- Right-side full-height image overlay (clipped by card borders) -->
+  <!-- Mobile: show image inline above text -->
+  <div class="mb-4 md:hidden">
+    <img
+      src="/headshot.jpg"
+      alt="Atharva Naik headshot"
+      class="h-48 w-full rounded-xl border border-white/10 object-cover" />
+  </div>
+
+  <!-- Desktop: right-side full-height image overlay (hidden on mobile) -->
   <div class="hidden md:block absolute inset-y-0 right-0 w-1/3 overflow-hidden">
     <img
       src="/headshot.jpg"
