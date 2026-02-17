@@ -8,12 +8,12 @@
   <section class="pt-20">
     <div class="glass-card p-8">
       <h2 class="text-2xl font-bold mb-2">Post not found</h2>
-      <p class="text-white/70">We couldn't find that article. <a href="#/blog" class="text-electric hover:underline">Back to Blog</a></p>
+      <p class="text-white/70">We couldn't find that article. <a href="#/blog" class="text-primary hover:underline">Back to Blog</a></p>
     </div>
   </section>
 {:else}
   <section class="pt-20">
-    <a href="#/blog" class="text-sm text-white/70 hover:text-electric">← Back to Blog</a>
+    <a href="#/blog" class="text-sm text-white/70 hover:text-primary">← Back to Blog</a>
     <article class="glass-card p-8 prose-lite mt-4">
       <h1 class="text-3xl font-extrabold mb-4">{post.title}</h1>
       {#if post.draft}
@@ -23,4 +23,3 @@
     </article>
   </section>
 {/if}
-

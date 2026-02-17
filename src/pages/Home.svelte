@@ -11,7 +11,7 @@
   class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5
   p-6 shadow-2xl md:p-10">
   <div
-    class="absolute -right-16 -top-12 h-64 w-64 rounded-full bg-electric/20
+    class="absolute -right-16 -top-12 h-64 w-64 rounded-full bg-primary/20
     blur-3xl" />
   <div
     class="absolute -left-16 bottom-0 h-52 w-52 rounded-full bg-cyan-400/20
@@ -27,27 +27,27 @@
 
   <div class="relative z-10 grid items-center gap-6 md:pr-[33%]">
     <div>
-      <h1 class="max-w-3xl text-xl font-black leading-tight md:text-5xl">
+      <h1 class="max-w-3xl text-l font-black leading-tight md:text-3xl">
         Hello, I'm Atharva.
       </h1>
       <!-- prettier-ignore -->
-      <p class="mt-6 max-w-3xl text-lg text-white/80">I’m a second year M.S. student studying 
+      <p class="mt-6 max-w-3xl text-base text-white/80">I’m a second year M.S. student studying 
         Computer Science at the 
-        <a href="https://cs.illinois.edu" class="text-electric hover:underline">University of Illinois Urbana-Champaign</a>, 
+        <a href="https://cs.illinois.edu"  target="_blank" class="text-primary hover:underline">University of Illinois Urbana-Champaign</a>, 
         where I also graduated with a B.S. in Mathematics & Computer Science. My thesis research is focused on 
-        <a href="https://oncare.cs.illinois.edu" class="text-electric hover:underline">AI bias and safety</a>, 
-        advised by Professor <a href="https://koustuv.com/" class="text-electric hover:underline">Koustuv Saha</a>. 
-        I also work on research in Algorithmic Game Theory, advised by Professor <a href="https://rutamehta.cs.illinois.edu/" class="text-electric hover:underline">Ruta Mehta</a>.
+        <a href="https://oncare.cs.illinois.edu"  target="_blank" class="text-primary hover:underline">AI bias and safety</a>, 
+        advised by Professor <a href="https://koustuv.com/"  target="_blank" class="text-primary hover:underline">Koustuv Saha</a>. 
+        I also work on research in Algorithmic Game Theory, advised by Professor <a href="https://rutamehta.cs.illinois.edu/"  target="_blank" class="text-primary hover:underline">Ruta Mehta</a>.
         <br><br>
-        Most recently, I was a Machine Learning Intern handling Agentic AI monitoring and evaluation at <a href="https://www.cboe.com/" class="text-electric hover:underline">Cboe Global Markets</a>.
-        Before that, I was a Machine Learning Intern at <a href="https://www.ameren.com/" class="text-electric hover:underline">Ameren</a>, where I worked on time-series forecasting.
+        Most recently, I was a Machine Learning Intern handling Agentic AI monitoring and evaluation at <a href="https://www.cboe.com/"  target="_blank" class="text-primary hover:underline">Cboe Global Markets</a>.
+        Before that, I was a Machine Learning Intern at <a href="https://www.ameren.com/"  target="_blank" class="text-primary hover:underline">Ameren</a>, where I worked on time-series forecasting.
         <br><br>
-        I am currently a teaching assistant for <a href="https://cs173.tech/" class="text-electric hover:underline">CS 173 Discrete Structures</a>, and I've previously
-        TA'd for <a href="https://courses.grainger.illinois.edu/cs440/fa2024/syllabus.html" class="text-electric hover:underline">CS 440 Artificial Intelligence</a> and CS 421 Compilers.
+        I am currently a teaching assistant for <a href="https://cs173.tech/"  target="_blank" class="text-primary hover:underline">CS 173 Discrete Structures</a>, and I've previously
+        TA'd for <a href="https://courses.grainger.illinois.edu/cs440/fa2024/syllabus.html"  target="_blank" class="text-primary hover:underline">CS 440 Artificial Intelligence</a> and CS 421 Compilers.
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a
-          class="inline-flex items-center gap-2 rounded-xl bg-electric px-4 py-3
+          class="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-3
           text-sm font-semibold text-black shadow-glow transition
           hover:scale-105"
           href="https://github.com/atharvanaik10"
@@ -70,7 +70,7 @@
           GitHub
         </a>
         <a
-          class="inline-flex items-center gap-2 rounded-xl bg-electric px-4 py-3
+          class="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-3
           text-sm font-semibold text-black shadow-glow transition
           hover:scale-105"
           href="https://www.linkedin.com/in/atharvanaik10"
@@ -89,7 +89,7 @@
           LinkedIn
         </a>
         <a
-          class="inline-flex items-center gap-2 rounded-xl bg-electric px-4 py-3
+          class="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-3
           text-sm font-semibold text-black shadow-glow transition
           hover:scale-105"
           href="mailto:atharvanaik10@gmail.com">

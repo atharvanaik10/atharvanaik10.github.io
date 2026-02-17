@@ -4,21 +4,16 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				night: "#040B1A",
-				midnight: "#0A1930",
-				electric: "#b4caef",
+				// Design tokens
+				primary: "#b4caef", // accent (links, buttons)
+				secondary: "#0A1930", // mid background
+				tertiary: "#040B1A", // base background
 			},
 			fontFamily: {
-				sans: [
-					"Inter",
-					"Helvetica Neue",
-					"Helvetica",
-					"Arial",
-					"sans-serif",
-				],
+				sans: ["Helvetica Neue", "Helvetica"],
 			},
 			boxShadow: {
-				glow: "0 0 35px rgba(30, 215, 96, 0.25)",
+				glow: "0 0 35px rgba(30, 185, 235, 0.25)",
 			},
 			keyframes: {
 				float: {

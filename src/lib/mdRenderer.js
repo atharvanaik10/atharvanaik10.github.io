@@ -20,7 +20,7 @@ function renderInline(md) {
     const escText = escapeHtml(text);
     const escHref = href;
     const ext = /^https?:\/\//.test(escHref) ? ' target="_blank" rel="noreferrer"' : '';
-    return `<a href="${escHref}" class="text-electric hover:underline"${ext}>${escText}</a>`;
+    return `<a href="${escHref}" class="text-primary hover:underline"${ext}>${escText}</a>`;
   });
   return md;
 }
@@ -98,4 +98,3 @@ export function renderMarkdown(md) {
 
   return out.join('\n');
 }
-
