@@ -71,40 +71,36 @@ Edit `src/pages/Home.svelte` to update:
 
 Blog content lives in `src/content/glp` (edit Markdown files). The Blog index and Post pages are in `src/pages/BlogIndex.svelte` and `src/pages/Post.svelte`.
 
-## Content-driven Experience and Projects
+## Content-driven Experience and Projects (single files)
 
-Add entries by creating Markdown files in:
+Add entries by editing a single Markdown file for each section:
 
-- Experience: `src/content/experience/*.md`
-- Projects: `src/content/projects/*.md`
+- Experience: `src/content/experience.md`
+- Projects: `src/content/projects.md`
 
-Experience format (frontmatter + bullet list):
+Experience entry format:
 
----
-company: 'Company Name'
-role: 'Job Title'
-location: 'City, State'
-period: 'Mon YYYY — Mon YYYY'
-order: 1
----
+### Company Name
+Role: Job Title
+Location: City, State
+Period: Mon YYYY — Mon YYYY
+Order: 1
 
 - Impact bullet 1
 - Impact bullet 2
 
-Project format:
+Projects entry format:
 
----
-name: 'Project Name'
-github: 'https://github.com/username/repo'
-image: '/path-in-public/example.png'
-tech: ['Tech1', 'Tech2']
-order: 1
----
+### Project Name
+GitHub: https://github.com/username/repo
+Image: /path-in-public/example.png
+Tech: Tech1, Tech2
+Order: 1
 
 Short description paragraph.
 
-Templates are available in `templates/experience-template.md` and `templates/project-template.md`.
+Templates are available in `templates/experience-single.md` and `templates/projects-single.md`.
 
 Notes:
-- Images referenced by `image` should live under `public/`.
-- Experiences and projects are sorted by `order` (ascending).
+- Images referenced by `Image:` should live under `public/`.
+- Experiences and projects are sorted by `Order` (ascending).

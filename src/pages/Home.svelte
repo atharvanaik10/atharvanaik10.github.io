@@ -7,7 +7,7 @@
 
 <section
   class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5
-  p-8 shadow-2xl md:p-14">
+  p-6 shadow-2xl md:p-10">
   <div
     class="absolute -right-16 -top-12 h-64 w-64 rounded-full bg-electric/20
     blur-3xl" />
@@ -15,21 +15,27 @@
     class="absolute -left-16 bottom-0 h-52 w-52 rounded-full bg-cyan-400/20
     blur-3xl" />
 
-  <div class="relative z-10 grid items-center gap-10 md:grid-cols-2">
+  <!-- Right-side full-height image overlay (clipped by card borders) -->
+  <div class="hidden md:block absolute inset-y-0 right-0 w-1/3 overflow-hidden">
+    <img
+      src="/headshot.jpg"
+      alt="Atharva Naik headshot"
+      class="h-full w-full object-cover" />
+  </div>
+
+  <div class="relative z-10 grid items-center gap-6 md:pr-[33%]">
     <div>
-      <h1 class="max-w-3xl text-4xl font-black leading-tight md:text-6xl">
+      <h1 class="max-w-3xl text-xl font-black leading-tight md:text-5xl">
         Hello, I'm Atharva.
       </h1>
-      <p class="mt-6 max-w-3xl text-lg text-white/80">
-        I’m a second year M.S. student studying Computer Science at the
-        <a
-          href="https://cd.illinois.edu"
-          target="_blank"
-          rel="noreferrer"
-          class="text-electric hover:underline">
-          University of Illinois Urbana-Champaign
-        </a>
-      </p>
+      <!-- prettier-ignore -->
+      <p class="mt-6 max-w-3xl text-lg text-white/80">I’m a second year M.S. student studying 
+        Computer Science at the 
+        <a href="https://cs.illinois.edu" class="text-electric hover:underline">University of Illinois Urbana-Champaign</a>, 
+        where I also graduated with a B.S. in Mathematics & Computer Science. My research is focused on 
+        <a href="https://oncare.cs.illinois.edu" class="text-electric hover:underline">AI bias and safety</a>, 
+        advised by Professor <a href="https://koustuv.com/" class="text-electric hover:underline">Koustuv Saha</a>. 
+        I also work on research in Algorithmic Game Theory, advised by Professor <a href="https://rutamehta.cs.illinois.edu/" class="text-electric hover:underline">Ruta Mehta</a>.</p>
       <div class="mt-8 flex flex-wrap gap-4">
         <a
           href="#projects"
@@ -45,16 +51,7 @@
         </a>
       </div>
     </div>
-    <div class="hidden md:block">
-      <div
-        class="w-full aspect-square rounded-2xl overflow-hidden border
-        border-white/15 shadow-2xl">
-        <img
-          src="/headshot.jpg"
-          alt="Atharva Naik headshot"
-          class="w-full h-full object-cover" />
-      </div>
-    </div>
+
   </div>
 </section>
 

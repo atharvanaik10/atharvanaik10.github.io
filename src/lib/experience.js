@@ -1,21 +1,42 @@
-import { parseFrontmatter } from './markdown.js';
 import { renderMarkdown } from './mdRenderer.js';
 
-const modules = import.meta.glob('/src/content/experience/*.md', { as: 'raw', eager: true });
+// Load single file: /src/content/experience.md
+const expModule = import.meta.glob('/src/content/experience.md', { as: 'raw', eager: true });
+const raw = Object.values(expModule)[0] || '';
 
-function toExperience(path, raw) {
-  const { data, body } = parseFrontmatter(raw);
-  return {
-    company: data.company || 'Company',
-    role: data.role || '',
-    location: data.location || '',
-    period: data.period || '',
-    order: Number(data.order ?? 0),
-    html: renderMarkdown(body)
-  };
+function parseKey(line) {
+  const m = line.match(/^([A-Za-z]+):\s*(.*)$/);
+  return m ? { key: m[1].toLowerCase(), value: m[2].trim() } : null;
 }
 
-export const experiences = Object.entries(modules)
-  .map(([p, raw]) => toExperience(p, raw))
-  .sort((a, b) => a.order - b.order || a.company.localeCompare(b.company));
+function parseExperiences(raw) {
+  const text = (raw || '').replace(/^\uFEFF/, '').trim();
+  if (!text) return [];
+  const blocks = text.split(/\n(?=###\s+)/);
+  const items = [];
+  for (const block of blocks) {
+    const lines = block.split(/\r?\n/);
+    if (!/^###\s+/.test(lines[0])) continue;
+    const company = lines[0].replace(/^###\s+/, '').trim();
+    let i = 1;
+    const meta = {};
+    while (i < lines.length && lines[i].trim() !== '') {
+      const kv = parseKey(lines[i]);
+      if (kv) meta[kv.key] = kv.value;
+      i++;
+    }
+    while (i < lines.length && lines[i].trim() === '') i++;
+    const body = lines.slice(i).join('\n');
+    items.push({
+      company,
+      role: meta.role || '',
+      location: meta.location || '',
+      period: meta.period || '',
+      order: Number(meta.order ?? 0),
+      html: renderMarkdown(body)
+    });
+  }
+  return items.sort((a, b) => a.order - b.order || a.company.localeCompare(b.company));
+}
 
+export const experiences = parseExperiences(raw);
