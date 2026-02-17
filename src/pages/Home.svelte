@@ -40,7 +40,7 @@
         I also work on research in Algorithmic Game Theory, advised by Professor <a href="https://rutamehta.cs.illinois.edu/"  target="_blank" class="text-primary hover:underline">Ruta Mehta</a>.
         <br><br>
         Most recently, I was a Machine Learning Intern handling Agentic AI monitoring and evaluation at <a href="https://www.cboe.com/"  target="_blank" class="text-primary hover:underline">Cboe Global Markets</a>.
-        Before that, I was a Machine Learning Intern at <a href="https://www.ameren.com/"  target="_blank" class="text-primary hover:underline">Ameren</a>, where I worked on time-series forecasting.
+        Before that, I was a Machine Learning Intern at <a href="https://www.ameren.com/"  target="_blank" class="text-primary hover:underline">Ameren</a>, where I worked on time-series forecasting and deep-learning for survival analysis.
         <br><br>
         I am currently a teaching assistant for <a href="https://cs173.tech/"  target="_blank" class="text-primary hover:underline">CS 173 Discrete Structures</a>, and I've previously
         TA'd for <a href="https://courses.grainger.illinois.edu/cs440/fa2024/syllabus.html"  target="_blank" class="text-primary hover:underline">CS 440 Artificial Intelligence</a> and CS 421 Compilers.
