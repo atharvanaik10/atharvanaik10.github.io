@@ -9,6 +9,26 @@ A simple, modern personal website built with **Svelte + Tailwind CSS**, designed
 - Projects
 - Contact (with polished icon links for GitHub, LinkedIn, and Email)
 
+## Blog content (from GLP ePortfolio)
+
+Hugo has been removed from this repo. The GLP ePortfolio content has been preserved for a future blog section:
+
+- Markdown posts: `src/content/glp/*.md`
+- Linked assets (images, PDFs): `public/` (same filenames as before, e.g. `/appalachia_1.JPG`)
+
+Planned approach to enable a blog (options):
+
+- Minimal: render a simple list with hardcoded links and copy post content into Svelte components.
+- Markdown-based: integrate a Markdown pipeline (e.g., `mdsvex` or `markdown-it`) to render posts from `src/content/glp`.
+
+Suggested next step (recommended):
+
+1. Install `mdsvex` and configure it with Svelte + Vite.
+2. Convert the GLP Markdown files to `.svx` or keep as `.md` with `mdsvex` support.
+3. Create a `Blog` section (or route) that lists posts and renders them.
+
+Note: The top nav contains a temporary "Blog" anchor and placeholder section.
+
 ## Local development
 
 ```bash
@@ -49,4 +69,4 @@ Edit `src/App.svelte` to update:
 - Projects
 - About bio
 - Contact links
-
+ - Blog content in `src/content/glp` (optional)

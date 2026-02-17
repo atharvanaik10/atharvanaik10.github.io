@@ -21,3 +21,14 @@ body {
 .glass-card {
   @apply bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl;
 }
+
+/* Lightweight prose styles without @tailwindcss/typography */
+.prose-lite h1 { @apply text-3xl font-bold mt-8 mb-4; }
+.prose-lite h2 { @apply text-2xl font-bold mt-8 mb-3; }
+.prose-lite h3 { @apply text-xl font-semibold mt-6 mb-2; }
+.prose-lite p  { @apply my-3 leading-7 text-white/85; }
+.prose-lite a  { @apply text-electric hover:underline; }
+.prose-lite ul { @apply list-disc pl-6 my-4 space-y-1; }
+.prose-lite ol { @apply list-decimal pl-6 my-4 space-y-1; }
+.prose-lite img { @apply rounded-xl border border-white/10 shadow-md my-4; }
+.prose-lite pre { @apply bg-black/40 rounded-lg p-4 overflow-x-auto border border-white/10 my-4; }

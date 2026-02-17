@@ -1,4 +1,5 @@
 <script>
+  import { posts } from './lib/blog.js';
   const experiences = [
     {
       company: 'Cboe Global Markets',
@@ -51,6 +52,7 @@
         <a href="#about" class="hover:text-electric transition">About</a>
         <a href="#experience" class="hover:text-electric transition">Experience</a>
         <a href="#projects" class="hover:text-electric transition">Projects</a>
+        <a href="#blog" class="hover:text-electric transition">Blog</a>
         <a href="#contact" class="hover:text-electric transition">Contact</a>
       </div>
     </nav>
@@ -120,6 +122,30 @@
           </article>
         {/each}
       </div>
+    </section>
+
+    <section id="blog" class="pt-20">
+      <h2 class="section-heading">Blog</h2>
+      <div class="grid gap-5 md:grid-cols-3">
+        {#each posts as post}
+          <article class="glass-card p-6 transition duration-300 hover:-translate-y-1 hover:border-electric/50">
+            <h3 class="text-xl font-bold">{post.title}</h3>
+            {#if post.draft}
+              <span class="mt-2 inline-flex items-center rounded-md bg-yellow-400/10 px-2 py-1 text-xs font-medium text-yellow-300 ring-1 ring-inset ring-yellow-400/20">Draft</span>
+            {/if}
+            <a href={"#post-" + post.slug} class="mt-4 inline-block text-sm text-electric hover:underline">Read</a>
+          </article>
+        {/each}
+      </div>
+
+      {#each posts as post}
+        <section id={"post-" + post.slug} class="mt-10">
+          <article class="glass-card p-8 prose-lite">
+            <h2 class="text-2xl font-bold mb-4">{post.title}</h2>
+            {@html post.html}
+          </article>
+        </section>
+      {/each}
     </section>
 
     <section id="contact" class="pt-20">
