@@ -38,18 +38,28 @@
         <a href="https://oncare.cs.illinois.edu" class="text-electric hover:underline">AI bias and safety</a>, 
         advised by Professor <a href="https://koustuv.com/" class="text-electric hover:underline">Koustuv Saha</a>. 
         I also work on research in Algorithmic Game Theory, advised by Professor <a href="https://rutamehta.cs.illinois.edu/" class="text-electric hover:underline">Ruta Mehta</a>.</p>
-      <div class="mt-8 flex flex-wrap gap-4">
+      <div class="mt-8 flex flex-wrap gap-3">
         <a
-          href="#projects"
-          class="rounded-xl bg-electric px-5 py-3 font-semibold text-black
-          shadow-glow transition hover:scale-105">
-          View Projects
+          class="inline-flex items-center gap-2 rounded-xl bg-electric px-4 py-3 text-sm font-semibold text-black shadow-glow transition hover:scale-105"
+          href="https://github.com/atharvanaik10"
+          target="_blank"
+          rel="noreferrer">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.1c-3.4.7-4.1-1.6-4.1-1.6-.6-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.4 1.3a11.8 11.8 0 0 1 6.2 0c2.4-1.6 3.4-1.3 3.4-1.3.7 1.6.3 2.9.2 3.2.8.9 1.2 2 1.2 3.3 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+          GitHub
         </a>
         <a
-          href="#contact"
-          class="rounded-xl border border-white/20 px-5 py-3 font-semibold
-          text-white transition hover:border-electric hover:text-electric">
-          Let’s Connect
+          class="inline-flex items-center gap-2 rounded-xl bg-electric px-4 py-3 text-sm font-semibold text-black shadow-glow transition hover:scale-105"
+          href="https://www.linkedin.com/in/atharvanaik10"
+          target="_blank"
+          rel="noreferrer">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.7H9.1V9h3.5v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.8 0 4.4 2.5 4.4 5.7v6.1ZM5.1 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM6.9 20.5H3.3V9h3.6v11.5Z"/></svg>
+          LinkedIn
+        </a>
+        <a
+          class="inline-flex items-center gap-2 rounded-xl bg-electric px-4 py-3 text-sm font-semibold text-black shadow-glow transition hover:scale-105"
+          href="mailto:atharvanaik10@gmail.com">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2.1-.5L12 10.3 19.9 5H4.1Zm15.9 2.2-7.4 5a1 1 0 0 1-1.2 0l-7.4-5v11.3c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5V7.2Z"/></svg>
+          atharvanaik10@gmail.com
         </a>
       </div>
     </div>
@@ -106,72 +116,4 @@
   </div>
 </section>
 
-<section id="contact" class="pt-20">
-  <h2 class="section-heading">Contact</h2>
-  <div class="glass-card p-8">
-    <p class="text-white/80">
-      Open to ML engineering, AI research, and systems opportunities.
-    </p>
-    <div class="mt-6 flex flex-wrap gap-4">
-      <a
-        class="inline-flex items-center gap-2 rounded-xl border border-white/15
-        px-4 py-3 text-sm font-medium transition hover:border-electric
-        hover:text-electric"
-        href="https://github.com/atharvanaik10"
-        target="_blank"
-        rel="noreferrer">
-        <svg
-          viewBox="0 0 24 24"
-          class="h-5 w-5 fill-current"
-          aria-hidden="true">
-          <path
-            d="M12 .5A12 12 0 0 0 8.2
-            23.9c.6.1.8-.3.8-.6v-2.1c-3.4.7-4.1-1.6-4.1-1.6-.6-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8
-            1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1
-            .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4
-            1.2-3.3-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.4 1.3a11.8 11.8 0 0 1 6.2
-            0c2.4-1.6 3.4-1.3 3.4-1.3.7 1.6.3 2.9.2 3.2.8.9 1.2 2 1.2 3.3 0
-            4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A12 12 0 0 0 12
-            .5Z" />
-        </svg>
-        GitHub
-      </a>
-      <a
-        class="inline-flex items-center gap-2 rounded-xl border border-white/15
-        px-4 py-3 text-sm font-medium transition hover:border-electric
-        hover:text-electric"
-        href="https://www.linkedin.com/in/atharvanaik10"
-        target="_blank"
-        rel="noreferrer">
-        <svg
-          viewBox="0 0 24 24"
-          class="h-5 w-5 fill-current"
-          aria-hidden="true">
-          <path
-            d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3.1-1.9-3.1s-2.2 1.5-2.2
-            3v5.7H9.1V9h3.5v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.8 0 4.4 2.5 4.4
-            5.7v6.1ZM5.1 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM6.9
-            20.5H3.3V9h3.6v11.5Z" />
-        </svg>
-        LinkedIn
-      </a>
-      <a
-        class="inline-flex items-center gap-2 rounded-xl border border-white/15
-        px-4 py-3 text-sm font-medium transition hover:border-electric
-        hover:text-electric"
-        href="mailto:atharvanaik10@gmail.com">
-        <svg
-          viewBox="0 0 24 24"
-          class="h-5 w-5 fill-current"
-          aria-hidden="true">
-          <path
-            d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0
-            1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2.1-.5L12 10.3 19.9
-            5H4.1Zm15.9 2.2-7.4 5a1 1 0 0 1-1.2 0l-7.4-5v11.3c0 .3.2.5.5.5h15c.3
-            0 .5-.2.5-.5V7.2Z" />
-        </svg>
-        atharvanaik10@gmail.com
-      </a>
-    </div>
-  </div>
-</section>
+ 

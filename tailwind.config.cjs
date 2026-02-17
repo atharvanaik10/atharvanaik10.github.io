@@ -6,7 +6,7 @@ module.exports = {
 			colors: {
 				night: "#040B1A",
 				midnight: "#0A1930",
-				electric: "#FFFFE3",
+				electric: "#b4caef",
 			},
 			fontFamily: {
 				sans: [
