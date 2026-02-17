@@ -34,12 +34,17 @@
       <p class="mt-6 max-w-3xl text-lg text-white/80">I’m a second year M.S. student studying 
         Computer Science at the 
         <a href="https://cs.illinois.edu" class="text-electric hover:underline">University of Illinois Urbana-Champaign</a>, 
-        where I also graduated with a B.S. in Mathematics & Computer Science. My research is focused on 
+        where I also graduated with a B.S. in Mathematics & Computer Science. My thesis research is focused on 
         <a href="https://oncare.cs.illinois.edu" class="text-electric hover:underline">AI bias and safety</a>, 
         advised by Professor <a href="https://koustuv.com/" class="text-electric hover:underline">Koustuv Saha</a>. 
         I also work on research in Algorithmic Game Theory, advised by Professor <a href="https://rutamehta.cs.illinois.edu/" class="text-electric hover:underline">Ruta Mehta</a>.
+        <br><br>
         Most recently, I was a Machine Learning Intern handling Agentic AI monitoring and evaluation at <a href="https://www.cboe.com/" class="text-electric hover:underline">Cboe Global Markets</a>.
-        Before that, I was a Machine Learning Intern at <a href="https://www.ameren.com/" class="text-electric hover:underline">Ameren</a>, where I worked on time-series forecasting.</p>
+        Before that, I was a Machine Learning Intern at <a href="https://www.ameren.com/" class="text-electric hover:underline">Ameren</a>, where I worked on time-series forecasting.
+        <br><br>
+        I am currently a teaching assistant for <a href="https://cs173.tech/" class="text-electric hover:underline">CS 173 Discrete Structures</a>, and I've previously
+        TA'd for <a href="https://courses.grainger.illinois.edu/cs440/fa2024/syllabus.html" class="text-electric hover:underline">CS 440 Artificial Intelligence</a> and CS 421 Compilers.
+      </p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a
           class="inline-flex items-center gap-2 rounded-xl bg-electric px-4 py-3
