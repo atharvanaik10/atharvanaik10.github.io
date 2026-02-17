@@ -1,8 +1,10 @@
 <script>
   import { experiences } from '../lib/experience.js'
   import { projects } from '../lib/projects.js'
+  import { researchItems } from '../lib/research.js'
   import ExperienceItem from '../components/ExperienceItem.svelte'
   import ProjectCard from '../components/ProjectCard.svelte'
+  import ResearchItem from '../components/ResearchItem.svelte'
 </script>
 
 <section
@@ -74,6 +76,15 @@
         Skills: Java, C++, Python, Spark, FastAPI, React, Swift, Google Cloud
       </div>
     </div>
+  </div>
+</section>
+
+<section id="research" class="pt-20">
+  <h2 class="section-heading">Research</h2>
+  <div class="space-y-5">
+    {#each researchItems as item}
+      <ResearchItem {item} />
+    {/each}
   </div>
 </section>
 

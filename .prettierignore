@@ -1,0 +1,3 @@
+# Ignore all site content (including blog posts)
+src/content/**
+
