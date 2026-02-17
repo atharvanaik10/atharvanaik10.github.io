@@ -1,6 +1,6 @@
 ### GeoPi
 GitHub: https://github.com/atharvanaik10/GeoPi
-Image: /geopi.jpg
+Image: /geopi.png
 Tech: Svelte, Cesium, Raspberry Pi
 Order: 1
 
