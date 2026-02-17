@@ -17,7 +17,7 @@ A repository dependency graph and cycle detection tool in C++ using GraphViz and
 ### OccuPi
 GitHub: https://github.com/atharvanaik10/occupi
 Image: /occupi.png
-Tech: Python, Edge AI, IoT, Computer Vision, Machine Learning, Google Cloud Platform, Raspberry Pi
+Tech: Python, Edge AI, IoT, Computer Vision, Machine Learning, Google Cloud Platform, Raspberry Pi, Flask
 Order: 3
 
 A real-time and forecasted room occupancy system using Raspberry Pi edge devices and zero-shot learning.

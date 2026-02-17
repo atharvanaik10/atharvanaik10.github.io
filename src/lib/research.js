@@ -27,6 +27,30 @@ function parseResearch(raw) {
     }
     while (i < lines.length && lines[i].trim() === '') i++;
     const body = lines.slice(i).join('\n');
+    const linkSpec = meta.links || meta.buttons || '';
+    let links = [];
+    if (linkSpec) {
+      // Prefer Markdown-style links: [Label](URL)
+      const md = /\[([^\]]+)\]\(([^)]+)\)/g;
+      let m;
+      while ((m = md.exec(linkSpec))) {
+        const label = (m[1] || '').trim();
+        const url = (m[2] || '').trim();
+        if (label && url) links.push({ label, url });
+      }
+      // Fallback to Label|URL comma-separated pairs for backward compatibility
+      if (links.length === 0) {
+        links = linkSpec
+          .split(',')
+          .map((e) => e.trim())
+          .filter(Boolean)
+          .map((pair) => {
+            const [label, url] = pair.split('|').map((s) => (s || '').trim());
+            return label && url ? { label, url } : null;
+          })
+          .filter(Boolean);
+      }
+    }
     items.push({
       name,
       role: meta.role || '',
@@ -37,6 +61,7 @@ function parseResearch(raw) {
         .split(',')
         .map((s) => s.trim())
         .filter(Boolean),
+      links,
       html: renderMarkdown(body)
     });
   }

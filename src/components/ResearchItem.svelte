@@ -24,4 +24,17 @@
       {/each}
     </div>
   {/if}
+  {#if item.links && item.links.length}
+    <div class="mt-4 flex flex-wrap gap-3">
+      {#each item.links as link}
+        <a
+          href={link.url}
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-xs font-semibold text-black shadow-glow transition hover:scale-105">
+          {link.label}
+        </a>
+      {/each}
+    </div>
+  {/if}
 </article>

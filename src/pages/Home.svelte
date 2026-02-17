@@ -111,15 +111,16 @@
   </div>
 </section>
 
-<section id="about" class="pt-20">
+<!-- <section id="about" class="pt-20">
   <h2 class="section-heading">About</h2>
   <div class="glass-card p-8">
     <p class="text-white/85 leading-relaxed">
+
       Skills: Python, Java, C++, Spark, FastAPI, React, Swift, Google Cloud,
       AWS, Git, JIRA
     </p>
   </div>
-</section>
+</section> -->
 
 <section id="research" class="pt-20">
   <h2 class="section-heading">Research</h2>
