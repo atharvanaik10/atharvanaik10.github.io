@@ -1,5 +1,11 @@
 <script>
+  import { onMount } from 'svelte';
   import Router from './lib/Router.svelte'
+  import { initAnalytics } from './lib/analytics.js';
+
+  onMount(() => {
+    initAnalytics();
+  });
 </script>
 
 <div
@@ -8,14 +14,14 @@
     class="sticky top-0 z-50 border-b border-white/10 bg-[#020915]/80
     backdrop-blur-lg">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-      <a href="#/" class="font-bold text-white/90">Atharva Naik</a>
+      <a href="#/" class="font-bold text-white/90" data-analytics-id="nav-home">Atharva Naik</a>
       <div class="hidden gap-6 text-sm text-white/80 md:flex">
-        <a href="#about" class="hover:text-primary transition">About</a>
-        <a href="#research" class="hover:text-primary transition">Research</a>
-        <a href="#experience" class="hover:text-primary transition">
+        <a href="#about" class="hover:text-primary transition" data-analytics-id="nav-about">About</a>
+        <a href="#research" class="hover:text-primary transition" data-analytics-id="nav-research">Research</a>
+        <a href="#experience" class="hover:text-primary transition" data-analytics-id="nav-experience">
           Experience
         </a>
-        <a href="#projects" class="hover:text-primary transition">Projects</a>
+        <a href="#projects" class="hover:text-primary transition" data-analytics-id="nav-projects">Projects</a>
         <!-- <a href="#/blog" class="hover:text-primary transition">Blog</a> -->
       </div>
     </nav>

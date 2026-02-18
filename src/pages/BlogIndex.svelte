@@ -2,7 +2,7 @@
   import { posts } from '../lib/blog.js';
 </script>
 
-<section class="pt-20">
+<section class="pt-20" data-track-section="blog-index">
   <h2 class="section-heading">Blog</h2>
   <div class="grid gap-5 md:grid-cols-3">
     {#each posts as post}
@@ -11,7 +11,7 @@
         {#if post.draft}
           <span class="mt-2 inline-flex items-center rounded-md bg-yellow-400/10 px-2 py-1 text-xs font-medium text-yellow-300 ring-1 ring-inset ring-yellow-400/20">Draft</span>
         {/if}
-        <a href={"#/blog/" + encodeURIComponent(post.slug)} class="mt-4 inline-block text-sm text-primary hover:underline">Read</a>
+        <a href={"#/blog/" + encodeURIComponent(post.slug)} data-analytics-id={`blog-read-${post.slug}`} class="mt-4 inline-block text-sm text-primary hover:underline">Read</a>
       </article>
     {/each}
   </div>
