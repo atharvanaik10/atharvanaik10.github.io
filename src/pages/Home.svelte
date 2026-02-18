@@ -8,6 +8,7 @@
 </script>
 
 <section
+  data-track-section="hero"
   class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5
   p-6 shadow-2xl md:p-10">
   <div
@@ -56,6 +57,7 @@
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a
+          data-analytics-id="hero-github"
           class="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-3
           text-sm font-semibold text-black shadow-glow transition
           hover:scale-105"
@@ -79,6 +81,7 @@
           GitHub
         </a>
         <a
+          data-analytics-id="hero-linkedin"
           class="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-3
           text-sm font-semibold text-black shadow-glow transition
           hover:scale-105"
@@ -98,6 +101,7 @@
           LinkedIn
         </a>
         <a
+          data-analytics-id="hero-email"
           class="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-3
           text-sm font-semibold text-black shadow-glow transition
           hover:scale-105"
@@ -131,7 +135,7 @@
   </div>
 </section> -->
 
-<section id="research" class="pt-20">
+<section id="research" class="pt-20" data-track-section="research">
   <h2 class="section-heading">Research</h2>
   <div class="space-y-5">
     {#each researchItems as item}
@@ -140,7 +144,7 @@
   </div>
 </section>
 
-<section id="experience" class="pt-20">
+<section id="experience" class="pt-20" data-track-section="experience">
   <h2 class="section-heading">Experience</h2>
   <div class="space-y-5">
     {#each experiences as exp}
@@ -149,7 +153,7 @@
   </div>
 </section>
 
-<section id="projects" class="pt-20">
+<section id="projects" class="pt-20" data-track-section="projects">
   <h2 class="section-heading">Projects</h2>
   <div class="grid gap-5 md:grid-cols-3">
     {#each projects as project}
