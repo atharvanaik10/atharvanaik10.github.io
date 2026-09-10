@@ -1,8 +1,8 @@
 <script>
-  import { Button } from 'm3-svelte'
+  import { Button, Card } from 'm3-svelte'
   import { experiences } from '../lib/experience.js'
   import { projects } from '../lib/projects.js'
-  import { researchItems } from '../lib/research.js'
+  import { researchItems, researchSynopsisHtml } from '../lib/research.js'
   import ExperienceItem from '../components/ExperienceItem.svelte'
   import ProjectCard from '../components/ProjectCard.svelte'
   import ResearchItem from '../components/ResearchItem.svelte'
@@ -16,10 +16,10 @@
     <h1 class="type-hero">Hello, I'm Atharva.</h1>
     <!-- prettier-ignore -->
     <p class="hero-intro type-body">I’m a Trading Operations Engineer at
-      <a href="https://www.flowtraders.com/" target="_blank">Flow Traders</a> in New York, working at the intersection of financial markets, production systems, and reliability engineering. I recently completed an M.S. in Computer Science at the
+      <a href="https://www.flowtraders.com/" target="_blank">Flow Traders</a> in New York. I recently completed an M.S. in Computer Science at the
       <a href="https://cs.illinois.edu" target="_blank">University of Illinois Urbana-Champaign</a>, where I also earned a B.S. in Mathematics & Computer Science.
       <br><br>
-      My research spans computational social science, responsible AI, and algorithmic game theory. Advised by Professor <a href="https://koustuv.com/" target="_blank">Koustuv Saha</a>, my thesis examined how LLM-mediated matchmaking can reproduce caste hierarchy. I also worked with Professor <a href="https://rutamehta.cs.illinois.edu/" target="_blank">Ruta Mehta</a> on game-theoretic methods for public-safety resource allocation.
+      My research focuses on game-theoretic and optimization methods for public-sector resource allocation, particularly under strategic behavior, uncertainty, and operational constraints. I currently work with Professor <a href="https://rutamehta.cs.illinois.edu/" target="_blank">Ruta Mehta</a> on security-game formulations of police patrol allocation.
       <br><br>
       Before Flow Traders, I built systems for LLM-agent observability and evaluation at <a href="https://www.cboe.com/" target="_blank">Cboe Global Markets</a>, and forecasting and survival-analysis models at <a href="https://www.ameren.com/about-ameren" target="_blank">Ameren</a>. I have taught discrete mathematics, artificial intelligence, compilers, and human-centered design, and I support the digital infrastructure and public web presence of R+R Collective.
     </p>
@@ -46,6 +46,14 @@
 <section id="research" class="editorial-section">
   <SectionLabel title="Research" kind="research" />
   <div class="section-content stacked-list">
+    {#if researchSynopsisHtml}
+      <article class="research-synopsis">
+        <Card variant="filled">
+          <p class="synopsis-label type-meta">Research statement</p>
+          <div class="synopsis-copy type-body">{@html researchSynopsisHtml}</div>
+        </Card>
+      </article>
+    {/if}
     {#each researchItems as item}
       <ResearchItem {item} />
     {/each}
