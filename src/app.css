@@ -311,8 +311,8 @@ a {
   height: 100%;
   color: var(--m3c-primary-container);
   fill: currentColor;
-  --mark-angle: 0deg;
-  animation: section-mark-breathe 6.5s cubic-bezier(0.2, 0, 0, 1) infinite alternate;
+  transform-origin: center;
+  animation: section-mark-breathe 4s ease-in-out infinite;
 }
 
 .section-mark > :not(.expressive-shape) {
@@ -322,21 +322,21 @@ a {
 
 .section-mark.experience .expressive-shape {
   color: var(--m3c-tertiary-container);
-  --mark-angle: 180deg;
-  animation-delay: -2.2s;
+  rotate: 180deg;
 }
 
 .section-mark.projects .expressive-shape {
   color: var(--m3c-secondary-container);
-  animation-delay: -4.4s;
 }
 
 @keyframes section-mark-breathe {
-  from {
-    transform: rotate(var(--mark-angle)) scale(0.98);
+  0%, 100% {
+    transform: scale(0.96);
+    opacity: 0.86;
   }
-  to {
-    transform: rotate(calc(var(--mark-angle) + 10deg)) scale(1.07);
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
   }
 }
 
