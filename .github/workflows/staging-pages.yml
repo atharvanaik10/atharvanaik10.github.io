@@ -1,0 +1,46 @@
+name: Deploy staging site
+
+on:
+  push:
+    branches: ["staging"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "staging-pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build for the staging project site
+        run: npm run build
+        env:
+          VITE_BASE_PATH: /website-staging/
+
+      - name: Publish to staging repository
+        env:
+          STAGING_DEPLOY_TOKEN: ${{ secrets.STAGING_DEPLOY_TOKEN }}
+        run: |
+          touch dist/.nojekyll
+          git -C dist init
+          git -C dist config user.name "github-actions[bot]"
+          git -C dist config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C dist add --all
+          git -C dist commit -m "Deploy staging ${GITHUB_SHA}"
+          git -C dist push --force "https://x-access-token:${STAGING_DEPLOY_TOKEN}@github.com/atharvanaik10/website-staging.git" HEAD:gh-pages
