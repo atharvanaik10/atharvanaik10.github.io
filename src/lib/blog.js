@@ -2,7 +2,11 @@ import { parseFrontmatter, slugFromPath } from './markdown.js';
 import { renderMarkdown } from './mdRenderer.js';
 
 // Eagerly import all Markdown files in blog folder as raw strings
-const modules = import.meta.glob('/src/content/blog/*.md', { as: 'raw', eager: true });
+const modules = import.meta.glob('/src/content/blog/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true
+});
 
 function toPost(path, raw) {
   const { data, body } = parseFrontmatter(raw);

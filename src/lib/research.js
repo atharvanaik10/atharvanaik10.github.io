@@ -1,7 +1,11 @@
 import { renderMarkdown } from './mdRenderer.js';
 
 // Load single file: /src/content/research.md
-const researchModule = import.meta.glob('/src/content/research.md', { as: 'raw', eager: true });
+const researchModule = import.meta.glob('/src/content/research.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true
+});
 const raw = Object.values(researchModule)[0] || '';
 
 function parseKey(line) {
