@@ -18,7 +18,7 @@ Links: [Paper](https://arxiv.org/abs/2509.13624)
 
 - Studied how fine-tuning datasets transfer across tasks by training and analyzing ten language models through a transfer-learning matrix and dimensionality reduction. Found that latent statistical and linguistic properties can matter more than surface-level dataset similarity when predicting transfer.
 
-### ALMA: Active Law-enforcement Mixed-strategy Allocator
+### ALMA: Active Law-Enforcement Mixed-Strategy Allocator
 Role: Graduate Researcher
 Location: Advisor: Professor Ruta Mehta
 Period: Aug 2025 – Present
