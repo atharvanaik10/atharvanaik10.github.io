@@ -15,19 +15,13 @@
   <div class="hero-copy">
     <h1 class="type-hero">Hello, I'm Atharva.</h1>
     <!-- prettier-ignore -->
-    <p class="hero-intro type-body">I’m a second year M.S. student studying
-      Computer Science at the
-      <a href="https://cs.illinois.edu" target="_blank">University of Illinois Urbana-Champaign</a>,
-      where I also graduated with a B.S. in Mathematics & Computer Science. My thesis research is focused on
-      <a href="https://oncare.cs.illinois.edu" target="_blank">AI bias and safety</a>,
-      advised by Professor <a href="https://koustuv.com/" target="_blank">Koustuv Saha</a>.
-      I also work on research in Algorithmic Game Theory, advised by Professor <a href="https://rutamehta.cs.illinois.edu/" target="_blank">Ruta Mehta</a>.
+    <p class="hero-intro type-body">I’m a Trading Operations Engineer at
+      <a href="https://www.flowtraders.com/" target="_blank">Flow Traders</a> in New York, working at the intersection of financial markets, production systems, and reliability engineering. I recently completed an M.S. in Computer Science at the
+      <a href="https://cs.illinois.edu" target="_blank">University of Illinois Urbana-Champaign</a>, where I also earned a B.S. in Mathematics & Computer Science.
       <br><br>
-      Most recently, I was a Machine Learning Intern handling Agentic AI monitoring and evaluation at <a href="https://www.cboe.com/" target="_blank">Cboe Global Markets</a>.
-      Before that, I was a Machine Learning Intern at <a href="https://www.ameren.com/about-ameren" target="_blank">Ameren</a>, where I worked on time-series forecasting and deep-learning for survival analysis.
+      My research spans computational social science, responsible AI, and algorithmic game theory. Advised by Professor <a href="https://koustuv.com/" target="_blank">Koustuv Saha</a>, my thesis examined how LLM-mediated matchmaking can reproduce caste hierarchy. I also worked with Professor <a href="https://rutamehta.cs.illinois.edu/" target="_blank">Ruta Mehta</a> on game-theoretic methods for public-safety resource allocation.
       <br><br>
-      I am currently a teaching assistant for <a href="https://cs173.tech/" target="_blank">CS 173 Discrete Structures</a>, and I've previously
-      TA'd for <a href="https://courses.grainger.illinois.edu/cs440/fa2024/syllabus.html" target="_blank">CS 440 Artificial Intelligence</a> and CS 421 Compilers.
+      Before Flow Traders, I built systems for LLM-agent observability and evaluation at <a href="https://www.cboe.com/" target="_blank">Cboe Global Markets</a>, and forecasting and survival-analysis models at <a href="https://www.ameren.com/about-ameren" target="_blank">Ameren</a>. I have taught discrete mathematics, artificial intelligence, compilers, and human-centered design, and I support the digital infrastructure and public web presence of R+R Collective.
     </p>
     <div class="hero-actions">
       <Button variant="filled" size="m" href="https://github.com/atharvanaik10" target="_blank" rel="noreferrer" iconType="left">
