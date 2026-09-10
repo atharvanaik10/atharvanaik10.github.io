@@ -5,7 +5,7 @@
 <div class="site-shell">
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary navigation">
-      <a href="#/" class="wordmark">Atharva Naik</a>
+      <a href="#/" class="wordmark type-subtitle">Atharva Naik</a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#research">Research</a>

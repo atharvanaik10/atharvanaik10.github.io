@@ -56,6 +56,61 @@
   --m3-shape-extra-large: 32px;
 }
 
+/* Six reusable typography roles shared by pages, cards, and Markdown output. */
+.type-hero {
+  font-size: clamp(3.15rem, 5.8vw, 5.8rem);
+  font-weight: 760;
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+.type-section,
+.section-heading {
+  font-size: clamp(2.25rem, 3vw, 3.2rem);
+  font-weight: 720;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.type-title,
+.prose-lite h1,
+.blog-card h3,
+.post-card h2 {
+  font-size: clamp(1.35rem, 1.8vw, 1.85rem);
+  font-weight: 690;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+}
+
+.type-body,
+.prose-lite,
+.project-description {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+.type-subtitle,
+.prose-lite h2,
+.prose-lite h3 {
+  font-size: 1rem;
+  font-weight: 620;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.type-meta,
+.nav-links,
+.skill-chip,
+.draft-badge,
+.footer-inner {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
@@ -109,30 +164,13 @@ a {
 
 .wordmark {
   position: relative;
-  font-size: 1.05rem;
-  font-weight: 720;
-  letter-spacing: -0.02em;
   text-decoration: none;
-}
-
-.wordmark::before {
-  content: '';
-  position: absolute;
-  left: -1rem;
-  top: 50%;
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 999px;
-  background: var(--m3c-primary);
-  transform: translateY(-50%);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: clamp(1rem, 3vw, 2.5rem);
-  font-size: 0.9rem;
-  font-weight: 600;
 }
 
 .nav-links a {
@@ -177,18 +215,12 @@ a {
 .hero-copy h1 {
   max-width: 11ch;
   margin: 0;
-  font-size: clamp(3.5rem, 7vw, 7rem);
-  font-weight: 760;
-  line-height: 0.92;
-  letter-spacing: -0.065em;
 }
 
 .hero-intro {
   max-width: 52rem;
   margin: 2.25rem 0 0;
   color: var(--m3c-on-surface-variant);
-  font-size: clamp(1rem, 1.3vw, 1.12rem);
-  line-height: 1.78;
 }
 
 .hero-intro a,
@@ -231,7 +263,7 @@ a {
   width: 100%;
   height: 100%;
   min-height: 34rem;
-  border-radius: var(--m3-shape-extra-large);
+  border-radius: 9rem 9rem var(--m3-shape-extra-large) var(--m3-shape-extra-large);
   object-fit: cover;
   object-position: center;
   box-shadow: var(--m3-elevation-2);
@@ -243,14 +275,31 @@ a {
   bottom: -1.25rem;
   width: 48%;
   height: 42%;
-  border-radius: var(--m3-shape-large);
+  border-radius: 45% 55% 38% 62% / 58% 38% 62% 42%;
   background: var(--m3c-primary-container);
+}
+
+.portrait-motion {
+  position: absolute;
+  z-index: 2;
+  right: -1.4rem;
+  top: 4rem;
+  display: grid;
+  width: 5.25rem;
+  height: 5.25rem;
+  place-items: center;
+  border: 0.45rem solid var(--m3c-surface);
+  border-radius: 50% 50% 28% 72% / 58% 34% 66% 42%;
+  background: var(--m3c-primary-container);
+  color: var(--m3c-primary);
+  box-shadow: var(--m3-elevation-1);
+  transform: rotate(8deg);
 }
 
 .editorial-section {
   display: grid;
-  grid-template-columns: minmax(11rem, 0.42fr) minmax(0, 1.58fr);
-  gap: clamp(2rem, 6vw, 6rem);
+  grid-template-columns: minmax(14rem, 17rem) minmax(0, 1fr);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
   padding-block: clamp(5rem, 10vw, 9rem);
   border-bottom: 1px solid var(--m3c-outline-variant);
 }
@@ -259,21 +308,68 @@ a {
   border-bottom: 0;
 }
 
+.section-label {
+  min-width: 0;
+}
+
 .section-label h2,
 .section-heading {
   position: sticky;
   top: 7rem;
   margin: 0;
   color: var(--m3c-primary);
-  font-size: clamp(2.4rem, 4vw, 4.75rem);
-  font-weight: 720;
-  line-height: 0.95;
-  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+
+.section-mark {
+  position: relative;
+  display: grid;
+  width: 4.25rem;
+  height: 4.25rem;
+  margin-bottom: 1.25rem;
+  place-items: center;
+  color: var(--m3c-on-primary-container);
+}
+
+.section-mark .expressive-shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--m3c-primary-container);
+  fill: currentColor;
+  transition: transform var(--m3-easing-spatial);
+}
+
+.section-mark > :not(.expressive-shape) {
+  position: relative;
+  z-index: 1;
+}
+
+.editorial-section:hover .section-mark .expressive-shape {
+  transform: rotate(12deg) scale(1.06);
+}
+
+.section-mark.experience .expressive-shape {
+  color: var(--m3c-tertiary-container);
+  transform: rotate(180deg);
+}
+
+.editorial-section:hover .section-mark.experience .expressive-shape {
+  transform: rotate(192deg) scale(1.06);
+}
+
+.section-mark.projects .expressive-shape {
+  color: var(--m3c-secondary-container);
 }
 
 .stacked-list {
   display: grid;
   gap: 1rem;
+}
+
+.section-content {
+  min-width: 0;
 }
 
 .editorial-card > .m3-container {
@@ -292,6 +388,18 @@ a {
   transform: translateY(-2px);
 }
 
+.stacked-list .editorial-card:nth-child(3n + 1) > .m3-container {
+  border-radius: 2rem 2rem 0.9rem 2rem;
+}
+
+.stacked-list .editorial-card:nth-child(3n + 2) > .m3-container {
+  border-radius: 2rem 0.9rem 2rem 2rem;
+}
+
+.stacked-list .editorial-card:nth-child(3n) > .m3-container {
+  border-radius: 0.9rem 2rem 2rem 2rem;
+}
+
 .item-heading {
   display: flex;
   align-items: flex-start;
@@ -302,34 +410,26 @@ a {
 .item-heading h3,
 .project-card h3 {
   margin: 0;
-  font-size: clamp(1.45rem, 2.3vw, 2.2rem);
-  font-weight: 690;
-  line-height: 1.12;
-  letter-spacing: -0.035em;
 }
 
 .item-period {
   flex: none;
   margin: 0.25rem 0 0;
   color: var(--m3c-primary);
-  font-size: 0.85rem;
-  font-weight: 680;
-  letter-spacing: 0.015em;
 }
 
 .item-meta {
   margin: 0.45rem 0 0;
   color: var(--m3c-on-surface-variant);
-  font-weight: 570;
 }
 
 .prose-lite {
   color: var(--m3c-on-surface-variant);
 }
 
-.prose-lite h1 { margin: 2rem 0 1rem; font-size: 2rem; font-weight: 720; }
-.prose-lite h2 { margin: 2rem 0 0.75rem; font-size: 1.6rem; font-weight: 700; }
-.prose-lite h3 { margin: 1.5rem 0 0.5rem; font-size: 1.3rem; font-weight: 680; }
+.prose-lite h1 { margin: 2rem 0 1rem; }
+.prose-lite h2 { margin: 2rem 0 0.75rem; }
+.prose-lite h3 { margin: 1.5rem 0 0.5rem; }
 .prose-lite p { margin: 1rem 0; line-height: 1.72; }
 .prose-lite ul { margin: 1.1rem 0; padding-left: 1.25rem; list-style: none; }
 .prose-lite li { position: relative; margin: 0.55rem 0; padding-left: 1rem; }
@@ -367,12 +467,9 @@ a {
   align-items: center;
   padding: 0.25rem 0.75rem;
   border: 1px solid var(--m3c-outline-variant);
-  border-radius: var(--m3-shape-small);
+  border-radius: 999px;
   color: var(--m3c-on-surface-variant);
   background: var(--m3c-surface);
-  font-size: 0.76rem;
-  font-weight: 620;
-  line-height: 1.2;
 }
 
 .link-row,
@@ -397,29 +494,45 @@ a {
 
 .project-card > .m3-container {
   padding: 1rem;
+  overflow: hidden;
   background: var(--m3c-surface-container-low);
 }
 
+.project-card:nth-child(3n + 1) > .m3-container {
+  border-radius: 2rem 2rem 0.8rem 2rem;
+}
+
 .project-card:nth-child(2) > .m3-container {
+  border-radius: 2rem 0.8rem 2rem 2rem;
   background: color-mix(in srgb, var(--m3c-secondary-container) 44%, var(--m3c-surface));
 }
 
 .project-card:nth-child(3) > .m3-container {
+  border-radius: 0.8rem 2rem 2rem 2rem;
   background: color-mix(in srgb, var(--m3c-tertiary-container) 36%, var(--m3c-surface));
 }
 
-.project-image {
-  width: calc(100% + 2rem);
-  height: 12rem;
+.project-media {
+  width: auto;
   margin: -1rem -1rem 1.35rem;
-  border-radius: var(--m3-shape-medium) var(--m3-shape-medium) 0 0;
+  overflow: hidden;
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  height: 13rem;
   object-fit: cover;
+  transition: transform var(--m3-easing-spatial);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.035);
 }
 
 .project-description {
   margin-top: 0.8rem;
   color: var(--m3c-on-surface-variant);
-  line-height: 1.65;
 }
 
 .project-link {
@@ -453,21 +566,6 @@ a {
 .post-card h1,
 .post-card h2 {
   margin: 0;
-  font-weight: 720;
-  line-height: 1.1;
-  letter-spacing: -0.04em;
-}
-
-.blog-card h3 {
-  font-size: 1.5rem;
-}
-
-.post-card h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-}
-
-.post-card h2 {
-  font-size: 2rem;
 }
 
 .blog-link {
@@ -482,8 +580,6 @@ a {
   border-radius: var(--m3-shape-small);
   background: var(--m3c-tertiary-container);
   color: var(--m3c-on-tertiary-container);
-  font-size: 0.75rem;
-  font-weight: 680;
 }
 
 .back-link,
@@ -508,7 +604,6 @@ a {
   justify-content: space-between;
   gap: 1.5rem;
   color: var(--m3c-on-surface-variant);
-  font-size: 0.85rem;
 }
 
 .footer-link {
@@ -543,6 +638,7 @@ a {
   .section-label h2,
   .section-heading {
     position: static;
+    white-space: normal;
   }
 
   .project-grid {
@@ -574,7 +670,7 @@ a {
   }
 
   .hero-copy h1 {
-    font-size: clamp(3.25rem, 17vw, 5rem);
+    font-size: clamp(2.9rem, 14vw, 4.35rem);
   }
 
   .portrait-frame,
@@ -617,5 +713,9 @@ a {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  .portrait-motion {
+    display: none;
   }
 }

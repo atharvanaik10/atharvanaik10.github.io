@@ -4,12 +4,12 @@
 </script>
 
 <section class="blog-page">
-  <h2 class="section-heading">Blog</h2>
+  <h2 class="section-heading type-section">Blog</h2>
   <div class="blog-grid">
     {#each posts as post}
       <article class="editorial-card blog-card">
         <Card variant="outlined">
-          <h3>{post.title}</h3>
+          <h3 class="type-title">{post.title}</h3>
           {#if post.draft}
             <span class="draft-badge">Draft</span>
           {/if}

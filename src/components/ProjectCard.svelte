@@ -8,9 +8,11 @@
 <article class="editorial-card project-card">
   <Card variant="filled">
     {#if project.image}
-      <img src={assetUrl(project.image)} alt={project.name} class="project-image" />
+      <div class="project-media">
+        <img src={assetUrl(project.image)} alt={project.name} class="project-image" />
+      </div>
     {/if}
-    <h3>{project.name}</h3>
+    <h3 class="type-title">{project.name}</h3>
     <div class="project-description">{@html project.html}</div>
     {#if project.tech && project.tech.length}
       <div class="chip-row">

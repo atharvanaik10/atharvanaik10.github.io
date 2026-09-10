@@ -1,20 +1,21 @@
 <script>
-  import { Button } from 'm3-svelte'
+  import { Button, LoadingIndicator } from 'm3-svelte'
   import { experiences } from '../lib/experience.js'
   import { projects } from '../lib/projects.js'
   import { researchItems } from '../lib/research.js'
   import ExperienceItem from '../components/ExperienceItem.svelte'
   import ProjectCard from '../components/ProjectCard.svelte'
   import ResearchItem from '../components/ResearchItem.svelte'
+  import SectionLabel from '../components/SectionLabel.svelte'
 
   const assetUrl = (path) => `${import.meta.env.BASE_URL}${path.replace(/^[/]+/, '')}`
 </script>
 
 <section id="about" class="hero-section">
   <div class="hero-copy">
-    <h1>Hello, I'm Atharva.</h1>
+    <h1 class="type-hero">Hello, I'm Atharva.</h1>
     <!-- prettier-ignore -->
-    <p class="hero-intro">I’m a second year M.S. student studying
+    <p class="hero-intro type-body">I’m a second year M.S. student studying
       Computer Science at the
       <a href="https://cs.illinois.edu" target="_blank">University of Illinois Urbana-Champaign</a>,
       where I also graduated with a B.S. in Mathematics & Computer Science. My thesis research is focused on
@@ -46,11 +47,14 @@
   <div class="portrait-frame">
     <img src={assetUrl('/headshot.jpg')} alt="Atharva Naik headshot" />
     <div class="portrait-accent" aria-hidden="true"></div>
+    <div class="portrait-motion" aria-hidden="true">
+      <LoadingIndicator size={64} container={true} center={false} aria-hidden="true" />
+    </div>
   </div>
 </section>
 
 <section id="research" class="editorial-section">
-  <div class="section-label"><h2>Research</h2></div>
+  <SectionLabel title="Research" kind="research" />
   <div class="section-content stacked-list">
     {#each researchItems as item}
       <ResearchItem {item} />
@@ -59,7 +63,7 @@
 </section>
 
 <section id="experience" class="editorial-section">
-  <div class="section-label"><h2>Experience</h2></div>
+  <SectionLabel title="Experience" kind="experience" />
   <div class="section-content stacked-list">
     {#each experiences as exp}
       <ExperienceItem {exp} />
@@ -68,7 +72,7 @@
 </section>
 
 <section id="projects" class="editorial-section">
-  <div class="section-label"><h2>Projects</h2></div>
+  <SectionLabel title="Projects" kind="projects" />
   <div class="section-content project-grid">
     {#each projects as project}
       <ProjectCard {project} />

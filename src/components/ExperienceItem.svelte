@@ -6,10 +6,10 @@
 <article class="editorial-card">
   <Card variant="outlined">
     <div class="item-heading">
-      <h3>{exp.company}</h3>
-      <p class="item-period">{exp.period}</p>
+      <h3 class="type-title">{exp.company}</h3>
+      <p class="item-period type-meta">{exp.period}</p>
     </div>
-    <p class="item-meta">{exp.role}{exp.location ? ` • ${exp.location}` : ''}</p>
+    <p class="item-meta type-subtitle">{exp.role}{exp.location ? ` • ${exp.location}` : ''}</p>
     <div class="prose-lite">{@html exp.html}</div>
     {#if exp.tech && exp.tech.length}
       <div class="chip-row">
