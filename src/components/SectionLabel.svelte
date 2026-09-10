@@ -1,5 +1,5 @@
 <script>
-  import { Icon, pathArch, pathFlower, pathSoftBurst } from 'm3-svelte'
+  import { Icon, pathArch, pathBun, pathFlower } from 'm3-svelte'
 
   export let title
   export let kind
@@ -22,7 +22,7 @@
       }
     },
     projects: {
-      shape: pathSoftBurst,
+      shape: pathBun,
       icon: {
         width: 24,
         height: 24,
