@@ -1,3 +1,9 @@
+My research focuses on security resource allocation: how a defender should distribute limited patrol or monitoring capacity when risks are uncertain, coverage is necessarily incomplete, and adversaries may adapt to predictable behavior. I approach these problems through algorithmic game theory and operations research, particularly Stackelberg security games, mixed-strategy optimization, and robust decision-making.
+
+In my current work on ALMA, I model police patrol planning as a leader–follower problem. The defender commits to a probability distribution over feasible patrol routes, while an adversary responds to the resulting coverage pattern. Using operational data from the University of Illinois Police Department, I encode spatial and scheduling constraints, construct mixed patrol strategies, and compare them with randomized allocation baselines. I am particularly interested in the gap between an optimal strategy in a formal model and a strategy that can be implemented by an institution with limited information and changing conditions.
+
+My broader goal is to design algorithms with explicit assumptions, computationally tractable solution methods, interpretable tradeoffs, and robustness to incomplete or misspecified data.
+
 ### Sima AIunty: Caste Audit in LLM-Driven Matchmaking
 Role: Master's Thesis Researcher
 Location: OnCare Lab · Advisor: Professor Koustuv Saha
