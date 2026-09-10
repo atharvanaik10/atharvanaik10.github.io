@@ -4,6 +4,7 @@ Location: New York, NY
 Period: 2026 – Present
 Order: 1
 Skills: Trading Systems, Production Engineering, Systems Reliability, Automation
+Links: [Website](https://www.flowtraders.com/)
 
 - Build and operate automation around production trading systems, where uptime, latency, and execution reliability are central.
 - Support high-throughput market activity through operational tooling and production systems engineering.
@@ -14,6 +15,7 @@ Location: Remote
 Period: Current
 Order: 2
 Skills: Web Platforms, Google Workspace, SEO, Analytics, Knowledge Management
+Links: [Website](https://www.rnrcollective.com/)
 
 - Designed and maintain the collective's public website and supporting brand system, translating its research and relationship-building practice into an accessible digital presence.
 - Built internal infrastructure across Google Workspace, publishing workflows, analytics, knowledge management, hosting, and deployment.
@@ -24,6 +26,7 @@ Location: Chicago, IL
 Period: Jun 2025 – Aug 2025
 Order: 3
 Skills: Python, OpenTelemetry, Docker, Prometheus, Jaeger, Streamlit, LLM Evaluation
+Links: [Website](https://www.cboe.com/)
 
 - Architected a modular observability system for internally deployed LLM agents in containerized environments.
 - Instrumented more than 15,000 API and agent-user interactions each day using OpenTelemetry, Prometheus, and Jaeger.
@@ -35,6 +38,7 @@ Location: Champaign, IL
 Period: May 2023 – Dec 2024
 Order: 4
 Skills: Python, PySpark, Databricks, Time-Series Forecasting, Survival Analysis, CatBoost, Clustering
+Links: [Website](https://www.ameren.com/about-ameren)
 
 - Developed workforce-planning models combining clustering, supervised learning, and recurrent survival analysis to estimate employee retirement propensity.
 - Built hierarchical natural-gas demand forecasting pipelines using regression, ARIMA, and Prophet, contributing to approximately $300,000 in annual savings.
