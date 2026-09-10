@@ -1,5 +1,5 @@
 <script>
-  import { Button, Card } from 'm3-svelte'
+  import { Button } from 'm3-svelte'
   import { experiences } from '../lib/experience.js'
   import { projects } from '../lib/projects.js'
   import { researchItems, researchSynopsisHtml } from '../lib/research.js'
@@ -47,12 +47,7 @@
   <SectionLabel title="Research" kind="research" />
   <div class="section-content stacked-list">
     {#if researchSynopsisHtml}
-      <article class="research-synopsis">
-        <Card variant="filled">
-          <p class="synopsis-label type-meta">Research statement</p>
-          <div class="synopsis-copy type-body">{@html researchSynopsisHtml}</div>
-        </Card>
-      </article>
+      <div class="research-synopsis type-body">{@html researchSynopsisHtml}</div>
     {/if}
     {#each researchItems as item}
       <ResearchItem {item} />
