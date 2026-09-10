@@ -39,7 +39,7 @@
     <svg class="expressive-shape" viewBox="0 0 380 380">
       <path d={mark.shape} />
     </svg>
-    <Icon icon={mark.icon} size={24} />
+    <Icon icon={mark.icon} size={28} />
   </span>
   <h2 class="type-section">{title}</h2>
 </div>

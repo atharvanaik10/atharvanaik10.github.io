@@ -263,37 +263,10 @@ a {
   width: 100%;
   height: 100%;
   min-height: 34rem;
-  border-radius: 9rem 9rem var(--m3-shape-extra-large) var(--m3-shape-extra-large);
+  border-radius: 5rem 1.5rem 5rem 1.5rem;
   object-fit: cover;
   object-position: center;
   box-shadow: var(--m3-elevation-2);
-}
-
-.portrait-accent {
-  position: absolute;
-  right: -1.25rem;
-  bottom: -1.25rem;
-  width: 48%;
-  height: 42%;
-  border-radius: 45% 55% 38% 62% / 58% 38% 62% 42%;
-  background: var(--m3c-primary-container);
-}
-
-.portrait-motion {
-  position: absolute;
-  z-index: 2;
-  right: -1.4rem;
-  top: 4rem;
-  display: grid;
-  width: 5.25rem;
-  height: 5.25rem;
-  place-items: center;
-  border: 0.45rem solid var(--m3c-surface);
-  border-radius: 50% 50% 28% 72% / 58% 34% 66% 42%;
-  background: var(--m3c-primary-container);
-  color: var(--m3c-primary);
-  box-shadow: var(--m3-elevation-1);
-  transform: rotate(8deg);
 }
 
 .editorial-section {
@@ -324,9 +297,9 @@ a {
 .section-mark {
   position: relative;
   display: grid;
-  width: 4.25rem;
-  height: 4.25rem;
-  margin-bottom: 1.25rem;
+  width: 5.35rem;
+  height: 5.35rem;
+  margin-bottom: 1.5rem;
   place-items: center;
   color: var(--m3c-on-primary-container);
 }
@@ -338,7 +311,8 @@ a {
   height: 100%;
   color: var(--m3c-primary-container);
   fill: currentColor;
-  transition: transform var(--m3-easing-spatial);
+  --mark-angle: 0deg;
+  animation: section-mark-breathe 6.5s cubic-bezier(0.2, 0, 0, 1) infinite alternate;
 }
 
 .section-mark > :not(.expressive-shape) {
@@ -346,21 +320,24 @@ a {
   z-index: 1;
 }
 
-.editorial-section:hover .section-mark .expressive-shape {
-  transform: rotate(12deg) scale(1.06);
-}
-
 .section-mark.experience .expressive-shape {
   color: var(--m3c-tertiary-container);
-  transform: rotate(180deg);
-}
-
-.editorial-section:hover .section-mark.experience .expressive-shape {
-  transform: rotate(192deg) scale(1.06);
+  --mark-angle: 180deg;
+  animation-delay: -2.2s;
 }
 
 .section-mark.projects .expressive-shape {
   color: var(--m3c-secondary-container);
+  animation-delay: -4.4s;
+}
+
+@keyframes section-mark-breathe {
+  from {
+    transform: rotate(var(--mark-angle)) scale(0.98);
+  }
+  to {
+    transform: rotate(calc(var(--mark-angle) + 10deg)) scale(1.07);
+  }
 }
 
 .stacked-list {
@@ -628,6 +605,7 @@ a {
 
   .portrait-frame img {
     max-height: 34rem;
+    border-radius: 3.5rem 1.25rem 3.5rem 1.25rem;
   }
 
   .editorial-section {
@@ -715,7 +693,4 @@ a {
     animation-iteration-count: 1 !important;
   }
 
-  .portrait-motion {
-    display: none;
-  }
 }

@@ -1,5 +1,5 @@
 <script>
-  import { Button, LoadingIndicator } from 'm3-svelte'
+  import { Button } from 'm3-svelte'
   import { experiences } from '../lib/experience.js'
   import { projects } from '../lib/projects.js'
   import { researchItems } from '../lib/research.js'
@@ -46,10 +46,6 @@
   </div>
   <div class="portrait-frame">
     <img src={assetUrl('/headshot.jpg')} alt="Atharva Naik headshot" />
-    <div class="portrait-accent" aria-hidden="true"></div>
-    <div class="portrait-motion" aria-hidden="true">
-      <LoadingIndicator size={64} container={true} center={false} aria-hidden="true" />
-    </div>
   </div>
 </section>
 
