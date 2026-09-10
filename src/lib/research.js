@@ -7,6 +7,12 @@ const researchModule = import.meta.glob('/src/content/research.md', {
   eager: true
 });
 const raw = Object.values(researchModule)[0] || '';
+const normalized = raw.replace(/^\uFEFF/, '').trim();
+const firstItemIndex = normalized.search(/^###\s+/m);
+
+export const researchSynopsisHtml = firstItemIndex > 0
+  ? renderMarkdown(normalized.slice(0, firstItemIndex).trim())
+  : '';
 
 function parseKey(line) {
   const m = line.match(/^([A-Za-z]+):\s*(.*)$/);
