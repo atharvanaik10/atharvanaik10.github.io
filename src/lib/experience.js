@@ -31,6 +31,17 @@ function parseExperiences(raw) {
     }
     while (i < lines.length && lines[i].trim() === '') i++;
     const body = lines.slice(i).join('\n');
+    const linkSpec = meta.links || '';
+    const links = [];
+    if (linkSpec) {
+      const markdownLink = /\[([^\]]+)\]\(([^)]+)\)/g;
+      let match;
+      while ((match = markdownLink.exec(linkSpec))) {
+        const label = (match[1] || '').trim();
+        const url = (match[2] || '').trim();
+        if (label && url) links.push({ label, url });
+      }
+    }
     items.push({
       company,
       role: meta.role || '',
@@ -41,6 +52,7 @@ function parseExperiences(raw) {
         .split(',')
         .map((s) => s.trim())
         .filter(Boolean),
+      links,
       html: renderMarkdown(body)
     });
   }
