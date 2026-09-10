@@ -1,5 +1,5 @@
 <script>
-  import { Card } from 'm3-svelte'
+  import { Button, Card } from 'm3-svelte'
   export let exp
 </script>
 
@@ -15,6 +15,13 @@
       <div class="chip-row">
         {#each exp.tech as t}
           <span class="skill-chip">{t}</span>
+        {/each}
+      </div>
+    {/if}
+    {#if exp.links && exp.links.length}
+      <div class="link-row">
+        {#each exp.links as link}
+          <Button variant="tonal" href={link.url} target="_blank" rel="noreferrer">{link.label}</Button>
         {/each}
       </div>
     {/if}
