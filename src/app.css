@@ -489,6 +489,32 @@ a {
   min-width: 0;
 }
 
+.research-synopsis > .m3-container {
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+  border-radius: 2rem 2rem 0.9rem 2rem;
+  background: color-mix(in srgb, var(--m3c-primary-container) 42%, var(--m3c-surface));
+}
+
+.synopsis-label {
+  margin: 0 0 1rem;
+  color: var(--m3c-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.synopsis-copy {
+  max-width: 68ch;
+  color: var(--m3c-on-surface);
+}
+
+.synopsis-copy p {
+  margin: 0;
+}
+
+.synopsis-copy p + p {
+  margin-top: 1rem;
+}
+
 .editorial-card > .m3-container {
   padding: clamp(1.35rem, 3vw, 2.25rem);
   border-color: var(--m3c-outline-variant);
