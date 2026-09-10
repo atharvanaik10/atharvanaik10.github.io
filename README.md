@@ -13,10 +13,8 @@ A simple, modern personal website built with **Svelte + Tailwind CSS**, designed
 
 Hugo has been removed from this repo. The GLP ePortfolio content has been preserved for a future blog section:
 
-- Markdown posts: `src/content/glp/*.md`
+- Markdown posts: `src/content/blog/*.md`
 - Linked assets (images, PDFs): `public/` (same filenames as before, e.g. `/appalachia_1.JPG`)
-  
-Renamed to: `src/content/blog/*.md` (all preserved posts moved).
 
 Navigation:
 
@@ -41,6 +39,35 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+## Analytics (Google Analytics 4)
+
+This site now includes an optional analytics layer that works on GitHub Pages static hosting:
+
+- Tracks page views for hash routes (`#/`, `#/blog`, `#/blog/<slug>`)
+- Tracks clicks on important nav/contact/blog links via `data-analytics-id`
+- Tracks section views (`hero`, `research`, `experience`, `projects`, blog pages) with `IntersectionObserver`
+
+### Setup
+
+1. Create a GA4 property and Web Data Stream in Google Analytics.
+2. For local development, create a `.env` file (not committed) using `.env.example`:
+
+```bash
+cp .env.example .env
+# then edit .env and set your real ID
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+3. For GitHub Pages deployment, set the same value as a GitHub Actions secret:
+   - Go to **Repo Settings → Secrets and variables → Actions**
+   - Click **New repository secret**
+   - Name: `VITE_GA_MEASUREMENT_ID`
+   - Value: your real GA4 Measurement ID (example: `G-AB12CD34EF`)
+
+4. Push to `main` (or re-run the Pages workflow). The workflow injects `secrets.VITE_GA_MEASUREMENT_ID` into the Vite build step.
+
+If `VITE_GA_MEASUREMENT_ID` is not set, analytics stays disabled automatically.
 
 ## Deploying to GitHub Pages
 
@@ -69,7 +96,7 @@ Edit `src/pages/Home.svelte` to update:
 - About bio
 - Contact links
 
-Blog content lives in `src/content/glp` (edit Markdown files). The Blog index and Post pages are in `src/pages/BlogIndex.svelte` and `src/pages/Post.svelte`.
+Blog content lives in `src/content/blog` (edit Markdown files). The Blog index and Post pages are in `src/pages/BlogIndex.svelte` and `src/pages/Post.svelte`.
 
 ## Content-driven Experience and Projects (single files)
 

@@ -5,6 +5,7 @@
 
   import { onMount } from 'svelte';
   import { writable } from 'svelte/store';
+  import { refreshSectionTracking, trackPageView } from './analytics.js';
 
   const route = writable({ path: '/', params: {} });
 
@@ -24,6 +25,11 @@
     window.addEventListener('hashchange', setFromHash);
     return () => window.removeEventListener('hashchange', setFromHash);
   });
+
+  $: if ($route) {
+    trackPageView(window.location.hash || '#/');
+    refreshSectionTracking();
+  }
 </script>
 
 {#await (async () => 0)() then _}
