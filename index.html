@@ -6,9 +6,18 @@
 		<meta
 			name="description"
 			content="Atharva Naik — Trading Operations Engineer and computer science researcher." />
+		<script>
+			try {
+				const savedTheme = localStorage.getItem('theme')
+				const useDarkTheme = savedTheme
+					? savedTheme === 'dark'
+					: window.matchMedia('(prefers-color-scheme: dark)').matches
+				document.documentElement.dataset.theme = useDarkTheme ? 'dark' : 'light'
+			} catch {}
+		</script>
 		<title>Atharva Naik</title>
 	</head>
-	<body class="bg-tertiary">
+	<body>
 		<div id="app"></div>
 		<script type="module" src="/src/main.js"></script>
 	</body>
