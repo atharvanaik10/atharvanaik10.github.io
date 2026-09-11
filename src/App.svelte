@@ -1,6 +1,8 @@
 <script>
   import { onMount } from 'svelte'
   import { Button, Menu, MenuItem, Switch } from 'm3-svelte'
+  import iconSun from '@ktibow/iconset-material-symbols/light-mode'
+  import iconMoon from '@ktibow/iconset-material-symbols/dark-mode'
   import Router from './lib/Router.svelte'
 
   const navItems = [
@@ -45,9 +47,13 @@
           <a href={item.href}>{item.label}</a>
         {/each}
         <!-- <a href="#/blog" class="hover:text-primary transition">Blog</a> -->
-        <label class="theme-toggle">
-          <span>Dark mode</span>
-          <Switch bind:checked={darkMode} icons="both" aria-label="Use dark mode" />
+        <label class="theme-toggle" title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+          <Switch
+            bind:checked={darkMode}
+            icons="both"
+            uncheckedIcon={iconSun}
+            checkedIcon={iconMoon}
+            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} />
         </label>
       </div>
 
@@ -70,10 +76,14 @@
             {#each navItems as item}
               <MenuItem onclick={() => goTo(item.href)}>{item.label}</MenuItem>
             {/each}
-            <div class="mobile-theme-row">
-              <span>Dark mode</span>
-              <Switch bind:checked={darkMode} icons="both" aria-label="Use dark mode" />
-            </div>
+            <label class="mobile-theme-row" title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+              <Switch
+                bind:checked={darkMode}
+                icons="both"
+                uncheckedIcon={iconSun}
+                checkedIcon={iconMoon}
+                aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} />
+            </label>
           </Menu>
         </div>
       </details>
