@@ -9,7 +9,10 @@
       <h3 class="type-title">{item.name}</h3>
       <p class="item-period type-meta">{item.period}</p>
     </div>
-    <p class="item-meta type-subtitle">{item.role}{item.location ? ` • ${item.location}` : ''}</p>
+    <div class="item-meta-row type-meta">
+      {#if item.role}<p>{item.role}</p>{/if}
+      {#if item.location}<p>{item.location}</p>{/if}
+    </div>
     <div class="prose-lite">{@html item.html}</div>
     {#if item.tech && item.tech.length}
       <div class="chip-row">
