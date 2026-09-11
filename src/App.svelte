@@ -43,10 +43,10 @@
 <div class="site-shell">
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary navigation">
-      <a href="#/" class="wordmark type-subtitle">Atharva Naik</a>
+      <Button variant="text" size="s" href="#/" class="wordmark">Atharva Naik</Button>
       <div class="nav-links">
         {#each navItems as item}
-          <a href={item.href}>{item.label}</a>
+          <Button variant="text" size="s" href={item.href}>{item.label}</Button>
         {/each}
         <!-- <a href="#/blog" class="hover:text-primary transition">Blog</a> -->
         <label class="theme-toggle" title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>

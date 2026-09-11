@@ -1,5 +1,5 @@
 <script>
-  import { Button, Icon } from 'm3-svelte'
+  import { Button, ConnectedButtons, Icon } from 'm3-svelte'
   import iconMail from '@ktibow/iconset-material-symbols/mail-outline'
   import { experiences } from '../lib/experience.js'
   import { projects } from '../lib/projects.js'
@@ -24,7 +24,7 @@
       <br><br>
       Before Flow Traders, I built systems for LLM-agent observability and evaluation at <a href="https://www.cboe.com/" target="_blank">Cboe Global Markets</a>, and forecasting and survival-analysis models at <a href="https://www.ameren.com/about-ameren" target="_blank">Ameren</a>. I have taught <a href="https://cs173.tech/" target="_blank">discrete mathematics</a>, <a href="https://courses.grainger.illinois.edu/cs440/fa2024/syllabus.html" target="_blank">artificial intelligence</a>, <a href="https://courses.grainger.illinois.edu/cs421/fa2026/" target="_blank">compilers</a>, and <a href="https://las.illinois.edu/resources/international/globallearning/leaders" target="_blank">human-centered design</a>, and I support the digital infrastructure and public web presence of <a href="https://www.rnrcollective.com/" target="_blank">R+R Collective</a>. I'm also currently building <a href="https://www.beanheads.social">Beanheads</a>.
     </p>
-    <div class="hero-actions">
+    <ConnectedButtons class="hero-actions">
       <Button variant="filled" size="m" href="https://github.com/atharvanaik10" target="_blank" rel="noreferrer" iconType="left">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.1c-3.4.7-4.1-1.6-4.1-1.6-.6-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.4 1.3a11.8 11.8 0 0 1 6.2 0c2.4-1.6 3.4-1.3 3.4-1.3.7 1.6.3 2.9.2 3.2.8.9 1.2 2 1.2 3.3 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z" /></svg>
         GitHub
@@ -37,7 +37,7 @@
         <Icon icon={iconMail} size={20} />
         atharvanaik10@gmail.com
       </Button>
-    </div>
+    </ConnectedButtons>
   </div>
   <div class="portrait-frame">
     <img src={assetUrl('/headshot.jpg')} alt="Atharva Naik headshot" />

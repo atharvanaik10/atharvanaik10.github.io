@@ -198,7 +198,7 @@ a {
 
 .wordmark {
   position: relative;
-  text-decoration: none;
+  --m3c-primary: var(--m3c-on-surface);
 }
 
 .nav-links {
@@ -257,14 +257,6 @@ a {
   border-top: 1px solid var(--m3c-outline-variant);
 }
 
-.nav-links a {
-  padding-block: 0.5rem;
-  text-decoration: none;
-  transition: color var(--m3-easing-fast);
-}
-
-.nav-links a:hover,
-.nav-links a:focus-visible,
 .footer-link:hover {
   color: var(--m3c-primary);
 }
@@ -322,9 +314,8 @@ a {
 }
 
 .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  width: fit-content;
+  max-width: 100%;
   margin-top: 2rem;
 }
 
@@ -858,8 +849,16 @@ a {
   }
 
   .hero-actions {
-    align-items: flex-start;
+    display: flex !important;
+    width: 100%;
     flex-direction: column;
+    gap: 0.5rem;
+    overflow: visible;
+    border-radius: 0;
+  }
+
+  .hero-actions > .m3-container {
+    width: 100%;
   }
 
   .item-heading {
