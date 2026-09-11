@@ -6,7 +6,7 @@ My broader goal is to design algorithms with explicit assumptions, computational
 
 ### Sima AIunty: Caste Audit in LLM-Driven Matchmaking
 Role: Master's Thesis Researcher
-Location: OnCare Lab · Advisor: Professor Koustuv Saha
+Location: OnCare Lab | Advisor: Professor Koustuv Saha
 Period: 2025 – 2026
 Order: 1
 Skills: Large Language Models, Computational Social Science, Algorithmic Fairness, Experimental Design, NLP
@@ -26,7 +26,7 @@ Links: [Paper](https://github.com/atharvanaik10/ALMA/blob/main/ALMA_paper.pdf)
 
 ### Uniform Distribution and Rigidity of Sequences
 Role: Mathematics Research Assistant
-Location: Illinois Geometry Lab · Advisor: Professor Emeritus Joseph Rosenblatt
+Location: Illinois Geometry Lab | Advisor: Professor Emeritus Joseph Rosenblatt
 Period: Jan 2023 – May 2023
 Order: 3
 Skills: Python, Computational Number Theory, Data Visualization, Pure Mathematics
