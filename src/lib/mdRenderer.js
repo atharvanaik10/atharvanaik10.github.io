@@ -8,17 +8,22 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;');
 }
 
+function withBase(path) {
+  if (!path.startsWith('/') || path.startsWith('//')) return path;
+  return `${import.meta.env.BASE_URL}${path.replace(/^[/]+/, '')}`;
+}
+
 function renderInline(md) {
   // Images ![alt](src)
   md = md.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m, alt, src) => {
     const escAlt = escapeHtml(alt);
-    const escSrc = src;
+    const escSrc = withBase(src);
     return `<img src="${escSrc}" alt="${escAlt}" class="rounded-xl border border-white/10 shadow-md my-4" />`;
   });
   // Links [text](href)
   md = md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, text, href) => {
     const escText = escapeHtml(text);
-    const escHref = href;
+    const escHref = withBase(href);
     const ext = /^https?:\/\//.test(escHref) ? ' target="_blank" rel="noreferrer"' : '';
     return `<a href="${escHref}" class="text-primary hover:underline"${ext}>${escText}</a>`;
   });
@@ -93,7 +98,7 @@ export function renderMarkdown(md) {
       para.push(lines[i]);
       i++;
     }
-    out.push(`<p class="my-3 leading-7 text-white/85">${renderInline(escapeHtml(para.join(' ')))}</p>`);
+    out.push(`<p class="my-3 leading-7">${renderInline(escapeHtml(para.join(' ')))}</p>`);
   }
 
   return out.join('\n');
