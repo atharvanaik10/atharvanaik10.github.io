@@ -297,8 +297,9 @@ a {
 }
 
 .hero-copy h1 {
-  max-width: 11ch;
+  max-width: none;
   margin: 0;
+  white-space: nowrap;
 }
 
 .hero-intro {
@@ -848,6 +849,7 @@ a {
 
   .hero-copy h1 {
     font-size: clamp(2.9rem, 14vw, 4.35rem);
+    white-space: normal;
   }
 
   .portrait-frame,
