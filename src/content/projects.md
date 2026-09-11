@@ -14,7 +14,7 @@ Order: 2
 
 A C++ static-analysis tool that constructs repository dependency graphs, detects circular dependencies, and renders their structure with Graphviz.
 
-### occuPI
+### OccuPi
 GitHub: https://github.com/atharvanaik10/occupi
 Image: /occupi.png
 Tech: Python, Edge AI, IoT, Computer Vision, Machine Learning, Google Cloud Platform, Raspberry Pi, Flask
