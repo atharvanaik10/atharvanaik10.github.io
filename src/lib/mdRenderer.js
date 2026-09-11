@@ -30,6 +30,11 @@ function renderInline(md) {
   return md;
 }
 
+export function renderInlineMarkdown(md) {
+  if (!md) return '';
+  return renderInline(escapeHtml(md));
+}
+
 export function renderMarkdown(md) {
   if (!md) return '';
   const lines = md.replace(/\r\n?/g, '\n').split('\n');
@@ -40,15 +45,15 @@ export function renderMarkdown(md) {
 
     // Headings
     if (/^###\s+/.test(line)) {
-      out.push(`<h3 class="mt-8 mb-3 text-xl font-semibold">${renderInline(escapeHtml(line.replace(/^###\s+/, '')))}</h3>`);
+      out.push(`<h3 class="mt-8 mb-3 text-xl font-semibold">${renderInlineMarkdown(line.replace(/^###\s+/, ''))}</h3>`);
       i++; continue;
     }
     if (/^##\s+/.test(line)) {
-      out.push(`<h2 class="mt-10 mb-4 text-2xl font-bold">${renderInline(escapeHtml(line.replace(/^##\s+/, '')))}</h2>`);
+      out.push(`<h2 class="mt-10 mb-4 text-2xl font-bold">${renderInlineMarkdown(line.replace(/^##\s+/, ''))}</h2>`);
       i++; continue;
     }
     if (/^#\s+/.test(line)) {
-      out.push(`<h1 class="mt-10 mb-4 text-3xl font-extrabold">${renderInline(escapeHtml(line.replace(/^#\s+/, '')))}</h1>`);
+      out.push(`<h1 class="mt-10 mb-4 text-3xl font-extrabold">${renderInlineMarkdown(line.replace(/^#\s+/, ''))}</h1>`);
       i++; continue;
     }
 
@@ -70,7 +75,7 @@ export function renderMarkdown(md) {
     if (/^\d+\.\s+/.test(line)) {
       const items = [];
       while (i < lines.length && /^\d+\.\s+/.test(lines[i])) {
-        items.push(`<li class="my-1">${renderInline(escapeHtml(lines[i].replace(/^\d+\.\s+/, '')))}</li>`);
+        items.push(`<li class="my-1">${renderInlineMarkdown(lines[i].replace(/^\d+\.\s+/, ''))}</li>`);
         i++;
       }
       out.push(`<ol class="list-decimal pl-6 my-4 space-y-1">${items.join('')}</ol>`);
@@ -81,7 +86,7 @@ export function renderMarkdown(md) {
     if (/^(?:- |\* )/.test(line)) {
       const items = [];
       while (i < lines.length && /^(?:- |\* )/.test(lines[i])) {
-        items.push(`<li class="my-1">${renderInline(escapeHtml(lines[i].replace(/^(?:- |\* )/, '')))}</li>`);
+        items.push(`<li class="my-1">${renderInlineMarkdown(lines[i].replace(/^(?:- |\* )/, ''))}</li>`);
         i++;
       }
       out.push(`<ul class="list-disc pl-6 my-4 space-y-1">${items.join('')}</ul>`);
@@ -98,7 +103,7 @@ export function renderMarkdown(md) {
       para.push(lines[i]);
       i++;
     }
-    out.push(`<p class="my-3 leading-7">${renderInline(escapeHtml(para.join(' ')))}</p>`);
+    out.push(`<p class="my-3 leading-7">${renderInlineMarkdown(para.join(' '))}</p>`);
   }
 
   return out.join('\n');

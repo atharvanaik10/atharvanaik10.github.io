@@ -1,6 +1,7 @@
 <script>
   import { Button, Card, Icon } from 'm3-svelte'
   import iconOpenInNew from '@ktibow/iconset-material-symbols/open-in-new'
+  import ItemSubheading from './ItemSubheading.svelte'
   export let item
 </script>
 
@@ -10,10 +11,7 @@
       <h3 class="type-title">{item.name}</h3>
       <p class="item-period type-meta">{item.period}</p>
     </div>
-    <div class="item-meta-row type-meta">
-      {#if item.role}<p>{item.role}</p>{/if}
-      {#if item.location}<p>{item.location}</p>{/if}
-    </div>
+    <ItemSubheading left={item.role} rightHtml={item.locationHtml} />
     <div class="prose-lite">{@html item.html}</div>
     {#if item.tech && item.tech.length}
       <div class="chip-row">

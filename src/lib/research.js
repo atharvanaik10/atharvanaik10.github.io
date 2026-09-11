@@ -1,4 +1,4 @@
-import { renderMarkdown } from './mdRenderer.js';
+import { renderInlineMarkdown, renderMarkdown } from './mdRenderer.js';
 
 // Load single file: /src/content/research.md
 const researchModule = import.meta.glob('/src/content/research.md', {
@@ -65,6 +65,7 @@ function parseResearch(raw) {
       name,
       role: meta.role || '',
       location: meta.location || '',
+      locationHtml: renderInlineMarkdown(meta.location || ''),
       period: meta.period || '',
       order: Number(meta.order ?? 0),
       tech: (meta.tech || meta.skills || '')
