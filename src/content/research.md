@@ -1,16 +1,16 @@
-My research focuses on security resource allocation: how a defender should distribute limited patrol or monitoring capacity when risks are uncertain, coverage is necessarily incomplete, and adversaries may adapt to predictable behavior. I approach these problems through algorithmic game theory and operations research, particularly Stackelberg security games, mixed-strategy optimization, and robust decision-making.
+My current research focuses on security resource allocation: how a defender should distribute limited patrol or monitoring capacity when risks are uncertain, coverage is necessarily incomplete, and adversaries may adapt to predictable behavior. I approach these problems through graph-theoretic and game-theoretic lens, particularly using Stackelberg security games and mixed-strategy optimization.
 
 In my current work on ALMA, I model police patrol planning as a leader–follower problem. The defender commits to a probability distribution over feasible patrol routes, while an adversary responds to the resulting coverage pattern. Using operational data from the University of Illinois Police Department, I encode spatial and scheduling constraints, construct mixed patrol strategies, and compare them with randomized allocation baselines. I am particularly interested in the gap between an optimal strategy in a formal model and a strategy that can be implemented by an institution with limited information and changing conditions.
 
 My M.S. thesis, completed in the [OnCare Lab](https://oncare.cs.illinois.edu) with Professor Koustuv Saha, examined a second class of institutional decision systems: LLM-driven matchmaking. I conducted a controlled audit of five model families using real-world matrimonial profiles, measured how caste affected model-generated match evaluations, and tested a guardrail-based intervention. Although methodologically distinct from my current work, the project reinforced the importance of testing formal objectives and behavioral assumptions against the social settings in which computational systems operate.
 
-My broader goal is to design algorithms with explicit assumptions, computationally tractable solution methods, interpretable tradeoffs, and robustness to incomplete or misspecified data.
+My broader goal is to bridge the gap between theoretical computer science and real-world applications by design algorithms with computational solutions, interpretable tradeoffs, and robustness to incomplete/incorrect data.
 
 ### Sima AIunty: Caste Audit in LLM-Driven Matchmaking
 Role: Master's Thesis Researcher
-Location: OnCare Lab | Advisor: Professor Koustuv Saha
+Location: [OnCare Lab](https://oncare.cs.illinois.edu/) | Advisor: Professor Koustuv Saha
 Period: 2025 – 2026
-Order: 1
+Order: 2
 Skills: Large Language Models, Computational Social Science, Algorithmic Fairness, Experimental Design, NLP
 Links: [arXiv Preprint](https://arxiv.org/abs/2603.29288)
 
@@ -18,9 +18,9 @@ Links: [arXiv Preprint](https://arxiv.org/abs/2603.29288)
 
 ### ALMA: Active Law-Enforcement Mixed-Strategy Allocator
 Role: Graduate Researcher
-Location: Advisor: Professor Ruta Mehta
+Location: [TCS@Illinois](https://theoryincs.web.illinois.edu/) | Advisor: Professor Ruta Mehta
 Period: Aug 2025 – Present
-Order: 2
+Order: 1
 Skills: Game Theory, Optimization, Python, Statistical Modeling
 Links: [Paper](https://github.com/atharvanaik10/ALMA/blob/main/ALMA_paper.pdf)
 
@@ -28,7 +28,7 @@ Links: [Paper](https://github.com/atharvanaik10/ALMA/blob/main/ALMA_paper.pdf)
 
 ### Uniform Distribution and Rigidity of Sequences
 Role: Mathematics Research Assistant
-Location: Illinois Geometry Lab | Advisor: Professor Emeritus Joseph Rosenblatt
+Location: [Illinois Mathematics Lab](https://iml.math.illinois.edu/) | Advisor: Professor Emeritus Joseph Rosenblatt
 Period: Jan 2023 – May 2023
 Order: 3
 Skills: Python, Computational Number Theory, Data Visualization, Pure Mathematics
