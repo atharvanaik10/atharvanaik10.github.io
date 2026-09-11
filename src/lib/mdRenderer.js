@@ -98,7 +98,7 @@ export function renderMarkdown(md) {
       para.push(lines[i]);
       i++;
     }
-    out.push(`<p class="my-3 leading-7 text-white/85">${renderInline(escapeHtml(para.join(' ')))}</p>`);
+    out.push(`<p class="my-3 leading-7">${renderInline(escapeHtml(para.join(' ')))}</p>`);
   }
 
   return out.join('\n');
