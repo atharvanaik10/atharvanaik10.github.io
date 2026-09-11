@@ -1,8 +1,10 @@
 <script>
   import { onMount } from 'svelte'
-  import { Button, Menu, MenuItem, Switch } from 'm3-svelte'
+  import { Button, Icon, Menu, MenuItem, Switch } from 'm3-svelte'
   import iconSun from '@ktibow/iconset-material-symbols/light-mode'
   import iconMoon from '@ktibow/iconset-material-symbols/dark-mode'
+  import iconMenu from '@ktibow/iconset-material-symbols/menu'
+  import iconMenuOpen from '@ktibow/iconset-material-symbols/menu-open'
   import Router from './lib/Router.svelte'
 
   const navItems = [
@@ -65,11 +67,7 @@
           iconType="full"
           square
           aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}>
-          {#if mobileMenuOpen}
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 5 5 6.4l5.6 5.6L5 17.6 6.4 19l5.6-5.6 5.6 5.6 1.4-1.4-5.6-5.6L19 6.4 17.6 5 12 10.6 6.4 5Z" /></svg>
-          {:else}
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z" /></svg>
-          {/if}
+          <Icon icon={mobileMenuOpen ? iconMenuOpen : iconMenu} size={22} />
         </Button>
         <div class="mobile-menu-panel">
           <Menu>
