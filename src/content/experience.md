@@ -12,13 +12,13 @@ Links: [Website](https://www.flowtraders.com/)
 ### R+R Collective
 Role: Digital Infrastructure Engineer
 Location: Remote
-Period: Current
+Period: 2025 - Present
 Order: 2
 Skills: Web Platforms, Google Workspace, SEO, Analytics, Knowledge Management
 Links: [Website](https://www.rnrcollective.com/)
 
-- Designed and maintain the collective's public website and supporting brand system, translating its research and relationship-building practice into an accessible digital presence.
-- Built internal infrastructure across Google Workspace, publishing workflows, analytics, knowledge management, hosting, and deployment.
+- Design and maintain the collective's public website and supporting brand system, translating its research and relationship-building practice into an accessible digital presence.
+- Build internal infrastructure across Google Workspace, publishing workflows, analytics, knowledge management, hosting, and deployment.
 
 ### Cboe Global Markets
 Role: Machine Learning Intern
