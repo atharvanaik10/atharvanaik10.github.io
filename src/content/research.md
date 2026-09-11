@@ -2,6 +2,8 @@ My research focuses on security resource allocation: how a defender should distr
 
 In my current work on ALMA, I model police patrol planning as a leader–follower problem. The defender commits to a probability distribution over feasible patrol routes, while an adversary responds to the resulting coverage pattern. Using operational data from the University of Illinois Police Department, I encode spatial and scheduling constraints, construct mixed patrol strategies, and compare them with randomized allocation baselines. I am particularly interested in the gap between an optimal strategy in a formal model and a strategy that can be implemented by an institution with limited information and changing conditions.
 
+My M.S. thesis, completed in the [OnCare Lab](https://oncare.cs.illinois.edu) with Professor Koustuv Saha, examined a second class of institutional decision systems: LLM-driven matchmaking. I conducted a controlled audit of five model families using real-world matrimonial profiles, measured how caste affected model-generated match evaluations, and tested a guardrail-based intervention. Although methodologically distinct from my current work, the project reinforced the importance of testing formal objectives and behavioral assumptions against the social settings in which computational systems operate.
+
 My broader goal is to design algorithms with explicit assumptions, computationally tractable solution methods, interpretable tradeoffs, and robustness to incomplete or misspecified data.
 
 ### Sima AIunty: Caste Audit in LLM-Driven Matchmaking
