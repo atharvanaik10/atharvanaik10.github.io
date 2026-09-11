@@ -211,7 +211,6 @@ a {
 .mobile-theme-row {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   color: var(--m3c-on-surface-variant);
   cursor: pointer;
 }
@@ -253,11 +252,9 @@ a {
 
 .mobile-theme-row {
   min-height: 3.5rem;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0.25rem 0.75rem;
   border-top: 1px solid var(--m3c-outline-variant);
-  font-size: 0.875rem;
-  font-weight: 600;
 }
 
 .nav-links a {
