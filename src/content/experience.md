@@ -3,7 +3,7 @@ Role: Trading Operations Engineer
 Location: New York, NY
 Period: 2026 – Present
 Order: 1
-Skills: Trading Systems, Production Engineering, Systems Reliability, Automation
+Skills: Trading Systems, Production Engineering, Agentic Automation, Python
 Links: [Website](https://www.flowtraders.com/)
 
 - Build and operate automation around production trading systems, where uptime, latency, and execution reliability are central.
@@ -13,8 +13,8 @@ Links: [Website](https://www.flowtraders.com/)
 Role: Digital Infrastructure Engineer
 Location: Remote
 Period: 2025 - Present
-Order: 2
-Skills: Web Platforms, Google Workspace, SEO, Analytics, Knowledge Management
+Order: 4
+Skills: Webflow, Google Workspace, SEO, Analytics, Knowledge Management
 Links: [Website](https://www.rnrcollective.com/)
 
 - Design and maintain the collective's public website and supporting brand system, translating its research and relationship-building practice into an accessible digital presence.
@@ -24,7 +24,7 @@ Links: [Website](https://www.rnrcollective.com/)
 Role: Machine Learning Intern
 Location: Chicago, IL
 Period: Jun 2025 – Aug 2025
-Order: 3
+Order: 2
 Skills: Python, OpenTelemetry, Docker, Prometheus, Jaeger, Streamlit, LLM Evaluation
 Links: [Website](https://www.cboe.com/)
 
@@ -36,7 +36,7 @@ Links: [Website](https://www.cboe.com/)
 Role: Machine Learning Intern
 Location: Champaign, IL
 Period: May 2023 – Dec 2024
-Order: 4
+Order: 3
 Skills: Python, PySpark, Databricks, Time-Series Forecasting, Survival Analysis, CatBoost, Clustering
 Links: [Website](https://www.ameren.com/about-ameren)
 
