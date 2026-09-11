@@ -1,5 +1,6 @@
 <script>
-  import { Button, Card } from 'm3-svelte'
+  import { Button, Card, Icon } from 'm3-svelte'
+  import iconOpenInNew from '@ktibow/iconset-material-symbols/open-in-new'
   export let item
 </script>
 
@@ -24,7 +25,10 @@
     {#if item.links && item.links.length}
       <div class="link-row">
         {#each item.links as link}
-          <Button variant="tonal" href={link.url} target="_blank" rel="noreferrer">{link.label}</Button>
+          <Button variant="tonal" href={link.url} target="_blank" rel="noreferrer" iconType="left">
+            <Icon icon={iconOpenInNew} size={18} />
+            {link.label}
+          </Button>
         {/each}
       </div>
     {/if}
