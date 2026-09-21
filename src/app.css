@@ -18,36 +18,36 @@
   --m3-easing-spatial: cubic-bezier(0.2, 0, 0, 1) 450ms;
   --m3-elevation-1: 0 1px 2px rgb(0 0 0 / 0.2), 0 1px 3px 1px rgb(0 0 0 / 0.1);
   --m3-elevation-2: 0 1px 2px rgb(0 0 0 / 0.2), 0 2px 6px 2px rgb(0 0 0 / 0.1);
-  --m3c-primary: #8f3c27;
+  --m3c-primary: #24346b;
   --m3c-on-primary: #ffffff;
-  --m3c-primary-container: #ffdbd0;
-  --m3c-on-primary-container: #3a0b00;
-  --m3c-secondary: #77574e;
+  --m3c-primary-container: #dee4ff;
+  --m3c-on-primary-container: #0a1a4f;
+  --m3c-secondary: #805365;
   --m3c-on-secondary: #ffffff;
-  --m3c-secondary-container: #ffdbd0;
-  --m3c-on-secondary-container: #2c1510;
-  --m3c-tertiary: #6c5d2f;
+  --m3c-secondary-container: #ffd9e4;
+  --m3c-on-secondary-container: #331323;
+  --m3c-tertiary: #67558a;
   --m3c-on-tertiary: #ffffff;
-  --m3c-tertiary-container: #f5e1a7;
-  --m3c-on-tertiary-container: #221b00;
+  --m3c-tertiary-container: #ebddff;
+  --m3c-on-tertiary-container: #221047;
   --m3c-error: #ba1a1a;
   --m3c-on-error: #ffffff;
   --m3c-error-container: #ffdad6;
   --m3c-on-error-container: #410002;
-  --m3c-surface: #fcfcf7;
-  --m3c-on-surface: #211a18;
-  --m3c-surface-variant: #f2dfd9;
-  --m3c-on-surface-variant: #53433f;
+  --m3c-surface: #fff9f7;
+  --m3c-on-surface: #1d1b20;
+  --m3c-surface-variant: #f2dee1;
+  --m3c-on-surface-variant: #504348;
   --m3c-surface-container-lowest: #ffffff;
-  --m3c-surface-container-low: #f4f1eb;
-  --m3c-surface-container: #eeeae4;
-  --m3c-surface-container-high: #e8e5df;
-  --m3c-surface-container-highest: #e2dfd9;
-  --m3c-outline: #85736e;
-  --m3c-outline-variant: #d8c2bc;
-  --m3c-inverse-surface: #362f2c;
-  --m3c-inverse-on-surface: #fbeeea;
-  --m3c-inverse-primary: #ffb5a0;
+  --m3c-surface-container-low: #fff2f0;
+  --m3c-surface-container: #fbedea;
+  --m3c-surface-container-high: #f5e7e4;
+  --m3c-surface-container-highest: #efe1de;
+  --m3c-outline: #837377;
+  --m3c-outline-variant: #d6c2c6;
+  --m3c-inverse-surface: #323037;
+  --m3c-inverse-on-surface: #f8eef0;
+  --m3c-inverse-primary: #b9c5ff;
   --m3c-shadow: #000000;
   --m3c-scrim: #000000;
   --m3-shape-small: 10px;
@@ -58,36 +58,36 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --m3c-primary: #ffb5a0;
-  --m3c-on-primary: #561f0d;
-  --m3c-primary-container: #733622;
-  --m3c-on-primary-container: #ffdbd0;
-  --m3c-secondary: #e7bdb1;
-  --m3c-on-secondary: #442923;
-  --m3c-secondary-container: #5d3f37;
-  --m3c-on-secondary-container: #ffdbd0;
-  --m3c-tertiary: #d8c58d;
-  --m3c-on-tertiary: #3b2f05;
-  --m3c-tertiary-container: #544619;
-  --m3c-on-tertiary-container: #f5e1a7;
+  --m3c-primary: #b9c5ff;
+  --m3c-on-primary: #10205a;
+  --m3c-primary-container: #26366e;
+  --m3c-on-primary-container: #dee4ff;
+  --m3c-secondary: #f2b8cd;
+  --m3c-on-secondary: #4b2435;
+  --m3c-secondary-container: #633a4c;
+  --m3c-on-secondary-container: #ffd9e4;
+  --m3c-tertiary: #d0bdfb;
+  --m3c-on-tertiary: #382762;
+  --m3c-tertiary-container: #4f3e78;
+  --m3c-on-tertiary-container: #ebddff;
   --m3c-error: #ffb4ab;
   --m3c-on-error: #690005;
   --m3c-error-container: #93000a;
   --m3c-on-error-container: #ffdad6;
-  --m3c-surface: #141210;
-  --m3c-on-surface: #eee1dd;
-  --m3c-surface-variant: #55433e;
-  --m3c-on-surface-variant: #d8c2bc;
-  --m3c-surface-container-lowest: #0f0d0c;
-  --m3c-surface-container-low: #1d1a18;
-  --m3c-surface-container: #211e1c;
-  --m3c-surface-container-high: #2b2724;
-  --m3c-surface-container-highest: #36312e;
-  --m3c-outline: #a08d87;
-  --m3c-outline-variant: #55433e;
-  --m3c-inverse-surface: #eee1dd;
-  --m3c-inverse-on-surface: #362f2c;
-  --m3c-inverse-primary: #8f3c27;
+  --m3c-surface: #10121d;
+  --m3c-on-surface: #e7e1e4;
+  --m3c-surface-variant: #4f4347;
+  --m3c-on-surface-variant: #d3c2c6;
+  --m3c-surface-container-lowest: #0b0d16;
+  --m3c-surface-container-low: #181a26;
+  --m3c-surface-container: #1d1f2b;
+  --m3c-surface-container-high: #272935;
+  --m3c-surface-container-highest: #323440;
+  --m3c-outline: #9d8c91;
+  --m3c-outline-variant: #504348;
+  --m3c-inverse-surface: #e7e1e4;
+  --m3c-inverse-on-surface: #303039;
+  --m3c-inverse-primary: #45518a;
 }
 
 /* Six reusable typography roles shared by pages, cards, and Markdown output. */
@@ -129,7 +129,7 @@
 .prose-lite h2,
 .prose-lite h3 {
   font-size: 1rem;
-  font-weight: 620;
+  font-weight: 450;
   line-height: 1.45;
   letter-spacing: -0.01em;
 }
@@ -169,7 +169,7 @@ a {
   min-height: 100vh;
   overflow: clip;
   background:
-    linear-gradient(90deg, transparent calc(50% - 1px), rgba(143, 60, 39, 0.035) 50%, transparent calc(50% + 1px)),
+    linear-gradient(90deg, transparent calc(50% - 1px), rgba(36, 52, 107, 0.045) 50%, transparent calc(50% + 1px)),
     var(--m3c-surface);
 }
 
@@ -660,6 +660,7 @@ a {
   gap: 1.5rem;
   margin-top: 0.6rem;
   color: var(--m3c-on-surface-variant);
+  font-weight: 400;
 }
 
 .item-meta-row p {
@@ -748,11 +749,11 @@ a {
   --m3c-on-surface-variant: #262626;
   --m3c-primary: #171717;
   --m3c-on-secondary-container: #171717;
-  --m3c-surface: #fffdfa;
-  --m3c-surface-container-low: #f4f1eb;
-  --m3c-surface-container-highest: #e2dfd9;
-  --m3c-secondary-container: #ffdbd0;
-  --m3c-tertiary-container: #f5e1a7;
+  --m3c-surface: #fffbfa;
+  --m3c-surface-container-low: #fff2f0;
+  --m3c-surface-container-highest: #efe1de;
+  --m3c-secondary-container: #ffd9e4;
+  --m3c-tertiary-container: #ebddff;
   color: #171717;
   background: var(--m3c-surface-container-low);
 }

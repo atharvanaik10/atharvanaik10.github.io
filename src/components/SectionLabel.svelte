@@ -25,7 +25,7 @@
   $: mark = marks[kind] ?? marks.research
 </script>
 
-<div class="section-label">
+<div class="section-label" data-section-label>
   <span class="section-mark {kind}" aria-hidden="true">
     <svg class="expressive-shape" viewBox="0 0 380 380">
       <path d={mark.shape} />

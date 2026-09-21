@@ -5,7 +5,7 @@
   const assetUrl = (path) => `${import.meta.env.BASE_URL}${path.replace(/^[/]+/, '')}`
 </script>
 
-<article class="editorial-card project-card">
+<article class="editorial-card project-card" data-card>
   <Card variant="filled">
     {#if project.image}
       <div class="project-media">

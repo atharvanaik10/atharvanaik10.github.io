@@ -1,4 +1,7 @@
 <script>
+  import { onMount } from 'svelte'
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
   import { Button, ConnectedButtons, Icon } from 'm3-svelte'
   import iconMail from '@ktibow/iconset-material-symbols/mail-outline'
   import { experiences } from '../lib/experience.js'
@@ -11,14 +14,72 @@
   import GenerativeShape from '../components/GenerativeShape.svelte'
 
   const assetUrl = (path) => `${import.meta.env.BASE_URL}${path.replace(/^[/]+/, '')}`
+
+  let motionRoot
+
+  onMount(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    let media
+    const context = gsap.context(() => {
+      media = gsap.matchMedia()
+      media.add(
+        {
+          desktop: '(min-width: 681px) and (prefers-reduced-motion: no-preference)',
+          mobile: '(max-width: 680px) and (prefers-reduced-motion: no-preference)',
+          reduce: '(prefers-reduced-motion: reduce)'
+        },
+        ({ conditions }) => {
+          if (conditions.reduce) return
+
+          const compact = conditions.mobile
+          gsap.timeline({ defaults: { ease: 'power3.out' } })
+            .from('[data-reveal="hero-title"]', { y: compact ? 14 : 28, autoAlpha: 0, duration: compact ? 0.5 : 0.75 })
+            .from('[data-reveal="hero-copy"]', { y: compact ? 12 : 18, autoAlpha: 0, duration: compact ? 0.45 : 0.65 }, '-=0.38')
+            .from('[data-reveal="hero-actions"]', { y: 12, autoAlpha: 0, duration: 0.5 }, '-=0.32')
+            .from('[data-reveal="hero-portrait"]', { y: compact ? 12 : 20, scale: 0.965, autoAlpha: 0, duration: compact ? 0.6 : 0.9 }, '-=0.38')
+
+          motionRoot.querySelectorAll('[data-section]').forEach((section) => {
+            const cards = section.querySelectorAll('[data-card]')
+            const lead = section.querySelectorAll('[data-section-label], [data-reveal="synopsis"]')
+            const timeline = gsap.timeline({
+              scrollTrigger: { trigger: section, start: 'top 78%', once: true }
+            })
+            timeline.from(lead, { y: compact ? 10 : 16, autoAlpha: 0, duration: compact ? 0.4 : 0.55, stagger: 0.08, ease: 'power3.out' })
+            timeline.from(cards, {
+              y: compact ? 12 : 28,
+              rotation: compact || section.id !== 'projects' ? 0 : (index) => [-1.2, 0.8, -0.6][index % 3],
+              autoAlpha: 0,
+              duration: compact ? 0.45 : 0.68,
+              stagger: compact ? 0.06 : 0.1,
+              ease: 'power3.out'
+            }, '-=0.22')
+          })
+        }
+      )
+
+      media.add('(min-width: 681px) and (prefers-reduced-motion: no-preference)', () => {
+        gsap.to('.hero-geometry g', { rotation: 10, scale: 1.035, transformOrigin: 'center', duration: 12, repeat: -1, yoyo: true, ease: 'sine.inOut' })
+        motionRoot.querySelectorAll('[data-parallax]').forEach((art, index) => {
+          gsap.fromTo(art.querySelector('g'),
+            { yPercent: index % 2 ? -6 : 6, rotation: index % 2 ? -3 : 3, transformOrigin: 'center' },
+            { yPercent: index % 2 ? 7 : -7, rotation: index % 2 ? 4 : -4, ease: 'none', scrollTrigger: { trigger: art.closest('[data-section]'), start: 'top bottom', end: 'bottom top', scrub: 1.2 } }
+          )
+        })
+      })
+    }, motionRoot)
+
+    document.fonts?.ready.then(() => ScrollTrigger.refresh())
+    return () => { media?.revert(); context.revert() }
+  })
 </script>
 
+<div class="home-page" bind:this={motionRoot}>
 <section id="about" class="hero-section">
   <GenerativeShape kind="arcs" className="hero-geometry" />
   <div class="hero-copy">
-    <h1 class="type-hero">Hello, I'm Atharva.</h1>
+    <h1 class="type-hero" data-reveal="hero-title">Hello, I'm Atharva.</h1>
     <!-- prettier-ignore -->
-    <p class="hero-intro type-body">I’m a Trading Operations Engineer at
+    <p class="hero-intro type-body" data-reveal="hero-copy">I’m a Trading Operations Engineer at
       <a href="https://www.flowtraders.com/" target="_blank">Flow Traders</a> in New York, where I work on low-latency software in native connectivity, market data, and trading applications. I recently completed an M.S. in Computer Science at the
       <a href="https://cs.illinois.edu" target="_blank">University of Illinois Urbana-Champaign</a>, where I also earned a B.S. in Mathematics & Computer Science.
       <br><br>
@@ -26,7 +87,7 @@
       <br><br>
       Before Flow Traders, I built systems for LLM-agent observability and evaluation at <a href="https://www.cboe.com/" target="_blank">Cboe Global Markets</a>, and time-series forecasting and survival-analysis models at <a href="https://www.ameren.com/about-ameren" target="_blank">Ameren</a>. I have taught <a href="https://cs173.tech/" target="_blank">discrete mathematics</a>, <a href="https://courses.grainger.illinois.edu/cs440/fa2024/syllabus.html" target="_blank">artificial intelligence</a>, <a href="https://courses.grainger.illinois.edu/cs421/fa2026/" target="_blank">compilers</a>, and <a href="https://las.illinois.edu/resources/international/globallearning/leaders" target="_blank">human-centered design</a>, and I support the digital infrastructure and public web presence of <a href="https://www.rnrcollective.com/" target="_blank">R+R Collective</a>. I'm also currently building <a href="https://www.beanheads.social">Beanheads</a>.
     </p>
-    <ConnectedButtons class="hero-actions">
+    <ConnectedButtons class="hero-actions" data-reveal="hero-actions">
       <Button variant="filled" size="m" href="https://github.com/atharvanaik10" target="_blank" rel="noreferrer" iconType="left">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.1c-3.4.7-4.1-1.6-4.1-1.6-.6-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.4 1.3a11.8 11.8 0 0 1 6.2 0c2.4-1.6 3.4-1.3 3.4-1.3.7 1.6.3 2.9.2 3.2.8.9 1.2 2 1.2 3.3 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z" /></svg>
         GitHub
@@ -41,17 +102,17 @@
       </Button>
     </ConnectedButtons>
   </div>
-  <div class="portrait-frame">
+  <div class="portrait-frame" data-reveal="hero-portrait">
     <img src={assetUrl('/headshot.jpg')} alt="Atharva Naik headshot" />
   </div>
 </section>
 
-<section id="research" class="editorial-section">
-  <GenerativeShape kind="flow" className="section-art section-art--research" />
+<section id="research" class="editorial-section" data-section>
+  <GenerativeShape kind="flow" className="section-art section-art--research" dataParallax={true} />
   <SectionLabel title="Research" kind="research" />
   <div class="section-content stacked-list">
     {#if researchSynopsisHtml}
-      <div class="research-synopsis type-body">{@html researchSynopsisHtml}</div>
+      <div class="research-synopsis type-body" data-reveal="synopsis">{@html researchSynopsisHtml}</div>
     {/if}
     {#each researchItems as item}
       <ResearchItem {item} />
@@ -59,8 +120,8 @@
   </div>
 </section>
 
-<section id="experience" class="editorial-section">
-  <GenerativeShape kind="ring" className="section-art section-art--experience" />
+<section id="experience" class="editorial-section" data-section>
+  <GenerativeShape kind="ring" className="section-art section-art--experience" dataParallax={true} />
   <SectionLabel title="Experience" kind="experience" />
   <div class="section-content stacked-list">
     {#each experiences as exp}
@@ -69,8 +130,8 @@
   </div>
 </section>
 
-<section id="projects" class="editorial-section">
-  <GenerativeShape kind="bloom" className="section-art section-art--projects" />
+<section id="projects" class="editorial-section" data-section>
+  <GenerativeShape kind="bloom" className="section-art section-art--projects" dataParallax={true} />
   <SectionLabel title="Projects" kind="projects" />
   <div class="section-content project-grid">
     {#each projects as project}
@@ -78,3 +139,4 @@
     {/each}
   </div>
 </section>
+</div>

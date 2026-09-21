@@ -5,7 +5,7 @@
   export let exp
 </script>
 
-<article class="editorial-card">
+<article class="editorial-card" data-card>
   <Card variant="outlined">
     <div class="item-heading">
       <h3 class="type-title">{exp.company}</h3>

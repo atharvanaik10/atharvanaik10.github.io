@@ -1,6 +1,7 @@
 <script>
   export let kind = 'arcs'
   export let className = ''
+  export let dataParallax = false
 
   const flowLines = Array.from({ length: 17 }, (_, index) => {
     const x = 22 + index * 18
@@ -23,7 +24,7 @@
 </script>
 
 {#if kind === 'arcs'}
-  <svg class="generative-shape arcs {className}" viewBox="0 0 520 520" aria-hidden="true">
+  <svg class="generative-shape arcs {className}" viewBox="0 0 520 520" aria-hidden="true" data-parallax={dataParallax || undefined}>
     <g fill="none" stroke="currentColor" stroke-linecap="round">
       <circle class="shape-primary" cx="260" cy="260" r="210" pathLength="100" stroke-width="56" stroke-dasharray="71 29" transform="rotate(-28 260 260)" />
       <circle class="shape-secondary" cx="260" cy="260" r="152" pathLength="100" stroke-width="34" stroke-dasharray="56 44" transform="rotate(38 260 260)" />
@@ -32,7 +33,7 @@
     </g>
   </svg>
 {:else if kind === 'flow'}
-  <svg class="generative-shape flow {className}" viewBox="0 0 350 660" aria-hidden="true" preserveAspectRatio="none">
+  <svg class="generative-shape flow {className}" viewBox="0 0 350 660" aria-hidden="true" preserveAspectRatio="none" data-parallax={dataParallax || undefined}>
     <g fill="none" stroke="currentColor" stroke-linecap="round">
       {#each flowLines as line}
         <path d={line} />
@@ -40,7 +41,7 @@
     </g>
   </svg>
 {:else if kind === 'ring'}
-  <svg class="generative-shape ring {className}" viewBox="0 0 460 460" aria-hidden="true">
+  <svg class="generative-shape ring {className}" viewBox="0 0 460 460" aria-hidden="true" data-parallax={dataParallax || undefined}>
     <g fill="none" stroke="currentColor">
       <circle class="shape-primary" cx="230" cy="230" r="176" pathLength="100" stroke-width="26" stroke-dasharray="11 4 22 7 15 5 19 17" transform="rotate(-18 230 230)" />
       <circle class="shape-secondary" cx="230" cy="230" r="137" pathLength="100" stroke-width="18" stroke-dasharray="27 8 9 5 20 12 7 12" transform="rotate(31 230 230)" />
@@ -49,7 +50,7 @@
     </g>
   </svg>
 {:else if kind === 'bloom'}
-  <svg class="generative-shape bloom {className}" viewBox="0 0 440 440" aria-hidden="true">
+  <svg class="generative-shape bloom {className}" viewBox="0 0 440 440" aria-hidden="true" data-parallax={dataParallax || undefined}>
     <g stroke="currentColor" stroke-linecap="round">
       {#each bloomMarks as mark}
         <line
