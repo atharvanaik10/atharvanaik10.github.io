@@ -167,6 +167,7 @@ a {
 
 .site-shell {
   min-height: 100vh;
+  overflow: clip;
   background:
     linear-gradient(90deg, transparent calc(50% - 1px), rgba(143, 60, 39, 0.035) 50%, transparent calc(50% + 1px)),
     var(--m3c-surface);
@@ -262,16 +263,62 @@ a {
 }
 
 .site-main {
+  position: relative;
   padding-block: clamp(3rem, 7vw, 6rem) 8rem;
 }
 
 .hero-section {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(18rem, 0.75fr);
   gap: clamp(3rem, 7vw, 7rem);
   align-items: center;
   padding-bottom: clamp(5rem, 10vw, 9rem);
   border-bottom: 1px solid var(--m3c-outline-variant);
+}
+
+.hero-section > :not(.generative-shape),
+.editorial-section > :not(.generative-shape) {
+  position: relative;
+  z-index: 1;
+}
+
+.generative-shape {
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-geometry {
+  position: absolute;
+  z-index: 0;
+  top: -11rem;
+  right: -17rem;
+  width: min(64vw, 49rem);
+  color: var(--m3c-primary);
+  opacity: 0.56;
+  transform-origin: center;
+  animation: hero-arcs-drift 32s ease-in-out infinite alternate;
+}
+
+.hero-geometry .shape-secondary,
+.section-art .shape-secondary {
+  color: var(--m3c-secondary);
+}
+
+.hero-geometry .shape-tertiary,
+.section-art .shape-tertiary {
+  color: var(--m3c-tertiary);
+}
+
+.hero-geometry :where(.shape-primary, .shape-secondary, .shape-tertiary),
+.section-art :where(.shape-primary, .shape-secondary, .shape-tertiary) {
+  stroke: currentColor;
+}
+
+@keyframes hero-arcs-drift {
+  from { transform: rotate(-4deg) scale(0.98); }
+  to { transform: rotate(7deg) scale(1.035); }
 }
 
 .hero-copy {
@@ -342,15 +389,78 @@ a {
   border-radius: 5rem 1.5rem 5rem 1.5rem;
   object-fit: cover;
   object-position: center;
-  box-shadow: var(--m3-elevation-2);
+  box-shadow:
+    0 0 0 0.55rem color-mix(in srgb, var(--m3c-surface) 88%, transparent),
+    var(--m3-elevation-2);
 }
 
 .editorial-section {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(16rem, 20rem) minmax(0, 1fr);
   gap: clamp(2.5rem, 5vw, 4.5rem);
   padding-block: clamp(5rem, 10vw, 9rem);
   border-bottom: 1px solid var(--m3c-outline-variant);
+}
+
+.section-art {
+  position: absolute;
+  z-index: 0;
+  color: var(--m3c-primary);
+}
+
+.section-art--research {
+  top: 3rem;
+  right: -9rem;
+  width: 22rem;
+  height: calc(100% - 6rem);
+  opacity: 0.095;
+  animation: flow-field-breathe 18s ease-in-out infinite alternate;
+}
+
+.section-art--research path {
+  vector-effect: non-scaling-stroke;
+  stroke-width: 1.1;
+}
+
+.section-art--experience {
+  top: 50%;
+  left: -14rem;
+  width: 28rem;
+  color: var(--m3c-tertiary);
+  opacity: 0.12;
+  transform: translateY(-50%);
+  animation: broken-ring-drift 38s linear infinite;
+}
+
+.section-art--projects {
+  right: -12rem;
+  bottom: -7rem;
+  width: 31rem;
+  color: var(--m3c-secondary);
+  opacity: 0.16;
+  animation: bloom-turn 48s linear infinite;
+}
+
+.section-art--projects line {
+  stroke-width: 2.2;
+}
+
+@keyframes flow-field-breathe {
+  from { transform: translate3d(0, -0.75rem, 0) scaleX(0.96); }
+  to { transform: translate3d(-1.5rem, 0.75rem, 0) scaleX(1.04); }
+}
+
+@keyframes broken-ring-drift {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+@keyframes bloom-turn {
+  from { transform: rotate(0deg) scale(0.97); }
+  50% { transform: rotate(180deg) scale(1.035); }
+  to { transform: rotate(360deg) scale(0.97); }
 }
 
 .editorial-section:last-child {
@@ -784,6 +894,13 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .hero-geometry {
+    top: -8rem;
+    right: -12rem;
+    width: min(90vw, 43rem);
+    opacity: 0.44;
+  }
+
   .portrait-frame,
   .portrait-frame img {
     min-height: 26rem;
@@ -802,6 +919,11 @@ a {
   .editorial-section {
     grid-template-columns: 1fr;
     gap: 2.25rem;
+  }
+
+  .section-art--experience {
+    left: auto;
+    right: -12rem;
   }
 
   .section-label,
@@ -838,6 +960,13 @@ a {
     padding-left: 1rem;
   }
 
+  .hero-geometry {
+    top: 7rem;
+    right: -11rem;
+    width: 27rem;
+    opacity: 0.34;
+  }
+
   .hero-copy h1 {
     font-size: clamp(2.9rem, 14vw, 4.35rem);
     white-space: normal;
@@ -846,6 +975,23 @@ a {
   .portrait-frame,
   .portrait-frame img {
     min-height: 22rem;
+  }
+
+  .section-art--research {
+    right: -12rem;
+    opacity: 0.075;
+  }
+
+  .section-art--experience {
+    right: -15rem;
+    width: 25rem;
+    opacity: 0.09;
+  }
+
+  .section-art--projects {
+    right: -15rem;
+    width: 27rem;
+    opacity: 0.12;
   }
 
   .hero-actions {

@@ -8,11 +8,13 @@
   import ProjectCard from '../components/ProjectCard.svelte'
   import ResearchItem from '../components/ResearchItem.svelte'
   import SectionLabel from '../components/SectionLabel.svelte'
+  import GenerativeShape from '../components/GenerativeShape.svelte'
 
   const assetUrl = (path) => `${import.meta.env.BASE_URL}${path.replace(/^[/]+/, '')}`
 </script>
 
 <section id="about" class="hero-section">
+  <GenerativeShape kind="arcs" className="hero-geometry" />
   <div class="hero-copy">
     <h1 class="type-hero">Hello, I'm Atharva.</h1>
     <!-- prettier-ignore -->
@@ -45,6 +47,7 @@
 </section>
 
 <section id="research" class="editorial-section">
+  <GenerativeShape kind="flow" className="section-art section-art--research" />
   <SectionLabel title="Research" kind="research" />
   <div class="section-content stacked-list">
     {#if researchSynopsisHtml}
@@ -57,6 +60,7 @@
 </section>
 
 <section id="experience" class="editorial-section">
+  <GenerativeShape kind="ring" className="section-art section-art--experience" />
   <SectionLabel title="Experience" kind="experience" />
   <div class="section-content stacked-list">
     {#each experiences as exp}
@@ -66,6 +70,7 @@
 </section>
 
 <section id="projects" class="editorial-section">
+  <GenerativeShape kind="bloom" className="section-art section-art--projects" />
   <SectionLabel title="Projects" kind="projects" />
   <div class="section-content project-grid">
     {#each projects as project}
