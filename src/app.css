@@ -956,42 +956,68 @@ a {
     min-height: 4.25rem;
   }
 
-  .hero-copy {
-    padding-left: 1rem;
+  .site-main {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
   }
 
-  .hero-geometry {
-    top: 7rem;
-    right: -11rem;
-    width: 27rem;
-    opacity: 0.34;
+  .hero-section {
+    gap: 2rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .hero-geometry,
+  .section-art {
+    display: none;
+  }
+
+  .hero-copy {
+    padding-left: 0;
+  }
+
+  .hero-copy::before {
+    display: none;
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.9rem, 14vw, 4.35rem);
+    font-size: clamp(2.65rem, 13vw, 3.8rem);
     white-space: normal;
   }
 
-  .portrait-frame,
+  .hero-intro {
+    margin-top: 1.5rem;
+    line-height: 1.62;
+  }
+
+  .portrait-frame {
+    width: 100%;
+    min-height: 0;
+    margin-right: 0;
+  }
+
   .portrait-frame img {
-    min-height: 22rem;
+    width: 100%;
+    height: clamp(19rem, 108vw, 27rem);
+    min-height: 0;
+    border-radius: 2.5rem 1rem 2.5rem 1rem;
   }
 
-  .section-art--research {
-    right: -12rem;
-    opacity: 0.075;
+  .editorial-section {
+    gap: 1.5rem;
+    padding-block: 4rem;
   }
 
-  .section-art--experience {
-    right: -15rem;
-    width: 25rem;
-    opacity: 0.09;
+  .section-label {
+    gap: 0.65rem;
   }
 
-  .section-art--projects {
-    right: -15rem;
-    width: 27rem;
-    opacity: 0.12;
+  .section-mark {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .section-label .type-section {
+    font-size: clamp(1.8rem, 9vw, 2.35rem);
   }
 
   .hero-actions {
@@ -1005,6 +1031,12 @@ a {
 
   .hero-actions > .m3-container {
     width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .editorial-card > .m3-container {
+    padding: 1.25rem;
   }
 
   .item-heading {
