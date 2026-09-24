@@ -3,62 +3,48 @@
   export let className = ''
   export let dataParallax = false
 
-  const flowLines = Array.from({ length: 17 }, (_, index) => {
-    const x = 22 + index * 18
-    const swing = 17 + (index % 4) * 4
-    const counter = 11 + ((index + 2) % 5) * 3
-    return `M ${x} -24 C ${x - swing} 64, ${x + counter} 132, ${x} 206 S ${x - counter} 346, ${x} 414 S ${x + swing} 548, ${x} 684`
-  })
+  const contourPaths = [
+    'M305 82C241 29 127 46 83 119C38 193 69 301 151 335C230 368 331 316 348 233C360 173 347 117 305 82Z',
+    'M286 113C236 72 149 79 113 137C76 196 100 278 165 304C227 330 306 289 319 224C329 178 319 140 286 113Z',
+    'M264 146C229 117 170 122 145 162C120 203 136 257 180 275C222 292 276 264 285 220C292 189 286 165 264 146Z',
+    'M242 177C223 161 190 164 176 186C162 209 171 239 195 249C218 258 247 243 252 219C256 202 254 187 242 177Z'
+  ]
 
-  const goldenAngle = 137.508 * (Math.PI / 180)
-  const bloomMarks = Array.from({ length: 176 }, (_, index) => {
-    const radius = 10 + Math.sqrt(index) * 14.4
-    const angle = index * goldenAngle
-    return {
-      x: 220 + Math.cos(angle) * radius,
-      y: 220 + Math.sin(angle) * radius,
-      rotation: angle * (180 / Math.PI),
-      length: 4.5 + (index / 176) * 8.5
-    }
-  })
+  const bars = [74, 124, 174, 224, 274, 324, 374]
 </script>
 
 {#if kind === 'arcs'}
   <svg class="generative-shape arcs {className}" viewBox="0 0 520 520" aria-hidden="true" data-parallax={dataParallax || undefined}>
-    <g fill="none" stroke="currentColor" stroke-linecap="round">
-      <circle class="shape-primary" cx="260" cy="260" r="210" pathLength="100" stroke-width="56" stroke-dasharray="71 29" transform="rotate(-28 260 260)" />
-      <circle class="shape-secondary" cx="260" cy="260" r="152" pathLength="100" stroke-width="34" stroke-dasharray="56 44" transform="rotate(38 260 260)" />
-      <circle class="shape-primary" cx="260" cy="260" r="107" pathLength="100" stroke-width="18" stroke-dasharray="64 36" transform="rotate(-83 260 260)" />
-      <circle class="shape-tertiary" cx="260" cy="260" r="70" pathLength="100" stroke-width="10" stroke-dasharray="42 58" transform="rotate(116 260 260)" />
+    <g fill="none" stroke="currentColor">
+      <ellipse class="shape-primary" cx="260" cy="260" rx="218" ry="112" stroke-width="4" transform="rotate(-32 260 260)" />
+      <ellipse class="shape-secondary" cx="260" cy="260" rx="176" ry="82" stroke-width="18" transform="rotate(-32 260 260)" />
+      <ellipse class="shape-primary" cx="260" cy="260" rx="124" ry="54" stroke-width="5" transform="rotate(-32 260 260)" />
+      <circle class="shape-tertiary" cx="365" cy="190" r="32" fill="currentColor" stroke="none" />
     </g>
   </svg>
 {:else if kind === 'flow'}
-  <svg class="generative-shape flow {className}" viewBox="0 0 350 660" aria-hidden="true" preserveAspectRatio="none" data-parallax={dataParallax || undefined}>
-    <g fill="none" stroke="currentColor" stroke-linecap="round">
-      {#each flowLines as line}
-        <path d={line} />
+  <svg class="generative-shape flow {className}" viewBox="0 0 430 430" aria-hidden="true" data-parallax={dataParallax || undefined}>
+    <g fill="none" stroke="currentColor">
+      {#each contourPaths as path, index}
+        <path class={index % 2 ? 'shape-secondary' : 'shape-primary'} d={path} stroke-width={index === 1 ? 8 : 3} />
       {/each}
     </g>
   </svg>
 {:else if kind === 'ring'}
   <svg class="generative-shape ring {className}" viewBox="0 0 460 460" aria-hidden="true" data-parallax={dataParallax || undefined}>
-    <g fill="none" stroke="currentColor">
-      <circle class="shape-primary" cx="230" cy="230" r="176" pathLength="100" stroke-width="26" stroke-dasharray="11 4 22 7 15 5 19 17" transform="rotate(-18 230 230)" />
-      <circle class="shape-secondary" cx="230" cy="230" r="137" pathLength="100" stroke-width="18" stroke-dasharray="27 8 9 5 20 12 7 12" transform="rotate(31 230 230)" />
-      <circle class="shape-tertiary" cx="230" cy="230" r="101" pathLength="100" stroke-width="12" stroke-dasharray="17 9 31 12 8 23" transform="rotate(-61 230 230)" />
-      <circle class="shape-primary" cx="230" cy="230" r="67" pathLength="100" stroke-width="7" stroke-dasharray="49 18 12 21" transform="rotate(104 230 230)" />
+    <g fill="none" stroke="currentColor" stroke-linecap="round">
+      {#each bars as y, index}
+        <path class={index % 3 === 0 ? 'shape-secondary' : index % 3 === 1 ? 'shape-primary' : 'shape-tertiary'} d={`M${54 + index * 10} ${y}H${406 - index * 18}`} stroke-width={index % 2 ? 10 : 4} />
+      {/each}
     </g>
   </svg>
 {:else if kind === 'bloom'}
   <svg class="generative-shape bloom {className}" viewBox="0 0 440 440" aria-hidden="true" data-parallax={dataParallax || undefined}>
-    <g stroke="currentColor" stroke-linecap="round">
-      {#each bloomMarks as mark}
-        <line
-          x1={mark.x}
-          y1={mark.y}
-          x2={mark.x + Math.cos(mark.rotation * Math.PI / 180) * mark.length}
-          y2={mark.y + Math.sin(mark.rotation * Math.PI / 180) * mark.length} />
-      {/each}
+    <g fill="none" stroke="currentColor" stroke-linecap="round">
+      <path class="shape-primary" d="M60 342Q220 54 380 342" stroke-width="5" />
+      <path class="shape-secondary" d="M89 342Q220 105 351 342" stroke-width="13" />
+      <path class="shape-primary" d="M124 342Q220 158 316 342" stroke-width="5" />
+      <path class="shape-tertiary" d="M162 342Q220 218 278 342" stroke-width="22" />
     </g>
   </svg>
 {/if}

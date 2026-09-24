@@ -1,0 +1,55 @@
+/*
+ * Preserved September 2026 palette.
+ * Re-enable by setting data-palette="midnight-peach" on <html>.
+ */
+:root[data-palette='midnight-peach'] {
+  --m3c-primary: #24346b;
+  --m3c-on-primary: #ffffff;
+  --m3c-primary-container: #dee4ff;
+  --m3c-on-primary-container: #0a1a4f;
+  --m3c-secondary: #805365;
+  --m3c-on-secondary: #ffffff;
+  --m3c-secondary-container: #ffd9e4;
+  --m3c-on-secondary-container: #331323;
+  --m3c-tertiary: #67558a;
+  --m3c-on-tertiary: #ffffff;
+  --m3c-tertiary-container: #ebddff;
+  --m3c-on-tertiary-container: #221047;
+  --m3c-surface: #fff9f7;
+  --m3c-on-surface: #1d1b20;
+  --m3c-surface-variant: #f2dee1;
+  --m3c-on-surface-variant: #504348;
+  --m3c-surface-container-lowest: #ffffff;
+  --m3c-surface-container-low: #fff2f0;
+  --m3c-surface-container: #fbedea;
+  --m3c-surface-container-high: #f5e7e4;
+  --m3c-surface-container-highest: #efe1de;
+  --m3c-outline: #837377;
+  --m3c-outline-variant: #d6c2c6;
+}
+
+:root[data-theme='dark'][data-palette='midnight-peach'] {
+  --m3c-primary: #b9c5ff;
+  --m3c-on-primary: #10205a;
+  --m3c-primary-container: #26366e;
+  --m3c-on-primary-container: #dee4ff;
+  --m3c-secondary: #f2b8cd;
+  --m3c-on-secondary: #4b2435;
+  --m3c-secondary-container: #633a4c;
+  --m3c-on-secondary-container: #ffd9e4;
+  --m3c-tertiary: #d0bdfb;
+  --m3c-on-tertiary: #382762;
+  --m3c-tertiary-container: #4f3e78;
+  --m3c-on-tertiary-container: #ebddff;
+  --m3c-surface: #10121d;
+  --m3c-on-surface: #e7e1e4;
+  --m3c-surface-variant: #4f4347;
+  --m3c-on-surface-variant: #d3c2c6;
+  --m3c-surface-container-lowest: #0b0d16;
+  --m3c-surface-container-low: #181a26;
+  --m3c-surface-container: #1d1f2b;
+  --m3c-surface-container-high: #272935;
+  --m3c-surface-container-highest: #323440;
+  --m3c-outline: #9d8c91;
+  --m3c-outline-variant: #504348;
+}

@@ -1,5 +1,6 @@
 @import '@fontsource-variable/google-sans-flex/opsz.css';
 @import 'm3-svelte/etc/recommended-styles.css';
+@import './styles/palette-backups.css';
 
 @function --m3-density(--size) {
   result: var(--size);
@@ -18,36 +19,38 @@
   --m3-easing-spatial: cubic-bezier(0.2, 0, 0, 1) 450ms;
   --m3-elevation-1: 0 1px 2px rgb(0 0 0 / 0.2), 0 1px 3px 1px rgb(0 0 0 / 0.1);
   --m3-elevation-2: 0 1px 2px rgb(0 0 0 / 0.2), 0 2px 6px 2px rgb(0 0 0 / 0.1);
-  --m3c-primary: #24346b;
+  /* Screen equivalents for Pantone P 104-8 C, P 59-2 C, and P 3-9 C. */
+  --m3c-primary: #005dac;
   --m3c-on-primary: #ffffff;
-  --m3c-primary-container: #dee4ff;
-  --m3c-on-primary-container: #0a1a4f;
-  --m3c-secondary: #805365;
+  --m3c-primary-container: #d8e9f7;
+  --m3c-on-primary-container: #001b35;
+  --m3c-secondary: #8c3f43;
   --m3c-on-secondary: #ffffff;
-  --m3c-secondary-container: #ffd9e4;
-  --m3c-on-secondary-container: #331323;
-  --m3c-tertiary: #67558a;
+  --m3c-secondary-container: #f7a7a4;
+  --m3c-on-secondary-container: #321111;
+  --m3c-tertiary: #6d623a;
   --m3c-on-tertiary: #ffffff;
-  --m3c-tertiary-container: #ebddff;
-  --m3c-on-tertiary-container: #221047;
+  --m3c-tertiary-container: #f1eedb;
+  --m3c-on-tertiary-container: #24200b;
   --m3c-error: #ba1a1a;
   --m3c-on-error: #ffffff;
   --m3c-error-container: #ffdad6;
   --m3c-on-error-container: #410002;
-  --m3c-surface: #fff9f7;
-  --m3c-on-surface: #1d1b20;
-  --m3c-surface-variant: #f2dee1;
-  --m3c-on-surface-variant: #504348;
-  --m3c-surface-container-lowest: #ffffff;
-  --m3c-surface-container-low: #fff2f0;
-  --m3c-surface-container: #fbedea;
-  --m3c-surface-container-high: #f5e7e4;
-  --m3c-surface-container-highest: #efe1de;
-  --m3c-outline: #837377;
-  --m3c-outline-variant: #d6c2c6;
-  --m3c-inverse-surface: #323037;
-  --m3c-inverse-on-surface: #f8eef0;
-  --m3c-inverse-primary: #b9c5ff;
+  --m3c-surface: #f1eedb;
+  --m3c-on-surface: #1c1c18;
+  --m3c-surface-variant: #e6e1c9;
+  --m3c-on-surface-variant: #49473d;
+  --m3c-surface-container-lowest: #fffdf3;
+  --m3c-surface-container-low: #f7f4e3;
+  --m3c-surface-container: #ece8d4;
+  --m3c-surface-container-high: #e5e1cd;
+  --m3c-surface-container-highest: #ddd9c5;
+  --m3c-outline: #7b786a;
+  --m3c-outline-variant: #cbc6af;
+  --m3c-inverse-surface: #30302a;
+  --m3c-inverse-on-surface: #f7f3df;
+  --m3c-inverse-primary: #9ecaff;
+  --hero-title: #005dac;
   --m3c-shadow: #000000;
   --m3c-scrim: #000000;
   --m3-shape-small: 10px;
@@ -58,41 +61,42 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --m3c-primary: #b9c5ff;
-  --m3c-on-primary: #10205a;
-  --m3c-primary-container: #26366e;
-  --m3c-on-primary-container: #dee4ff;
-  --m3c-secondary: #f2b8cd;
-  --m3c-on-secondary: #4b2435;
-  --m3c-secondary-container: #633a4c;
-  --m3c-on-secondary-container: #ffd9e4;
-  --m3c-tertiary: #d0bdfb;
-  --m3c-on-tertiary: #382762;
-  --m3c-tertiary-container: #4f3e78;
-  --m3c-on-tertiary-container: #ebddff;
+  --m3c-primary: #9ecaff;
+  --m3c-on-primary: #003258;
+  --m3c-primary-container: #00477f;
+  --m3c-on-primary-container: #d4eaff;
+  --m3c-secondary: #ffb3b0;
+  --m3c-on-secondary: #561f22;
+  --m3c-secondary-container: #713438;
+  --m3c-on-secondary-container: #ffd9d7;
+  --m3c-tertiary: #d8cf9c;
+  --m3c-on-tertiary: #39320d;
+  --m3c-tertiary-container: #51491f;
+  --m3c-on-tertiary-container: #f1e8b5;
   --m3c-error: #ffb4ab;
   --m3c-on-error: #690005;
   --m3c-error-container: #93000a;
   --m3c-on-error-container: #ffdad6;
-  --m3c-surface: #10121d;
-  --m3c-on-surface: #e7e1e4;
-  --m3c-surface-variant: #4f4347;
-  --m3c-on-surface-variant: #d3c2c6;
-  --m3c-surface-container-lowest: #0b0d16;
-  --m3c-surface-container-low: #181a26;
-  --m3c-surface-container: #1d1f2b;
-  --m3c-surface-container-high: #272935;
-  --m3c-surface-container-highest: #323440;
-  --m3c-outline: #9d8c91;
-  --m3c-outline-variant: #504348;
-  --m3c-inverse-surface: #e7e1e4;
-  --m3c-inverse-on-surface: #303039;
-  --m3c-inverse-primary: #45518a;
+  --m3c-surface: #0b1722;
+  --m3c-on-surface: #e6e2d5;
+  --m3c-surface-variant: #49473d;
+  --m3c-on-surface-variant: #cbc6b5;
+  --m3c-surface-container-lowest: #071019;
+  --m3c-surface-container-low: #121e29;
+  --m3c-surface-container: #17232e;
+  --m3c-surface-container-high: #212d38;
+  --m3c-surface-container-highest: #2c3843;
+  --m3c-outline: #959181;
+  --m3c-outline-variant: #49473d;
+  --m3c-inverse-surface: #e6e2d5;
+  --m3c-inverse-on-surface: #2f302a;
+  --m3c-inverse-primary: #005dac;
+  --hero-title: #f7a7a4;
 }
 
 /* Six reusable typography roles shared by pages, cards, and Markdown output. */
 .type-hero {
-  font-size: clamp(3.15rem, 5.8vw, 5.8rem);
+  font-size: clamp(2.8rem, 5vw, 5rem);
   font-weight: 760;
   line-height: 0.94;
   letter-spacing: -0.055em;
@@ -168,9 +172,7 @@ a {
 .site-shell {
   min-height: 100vh;
   overflow: clip;
-  background:
-    linear-gradient(90deg, transparent calc(50% - 1px), rgba(36, 52, 107, 0.045) 50%, transparent calc(50% + 1px)),
-    var(--m3c-surface);
+  background: var(--m3c-surface);
 }
 
 .site-header {
@@ -317,8 +319,8 @@ a {
 }
 
 @keyframes hero-arcs-drift {
-  from { transform: rotate(-4deg) scale(0.98); }
-  to { transform: rotate(7deg) scale(1.035); }
+  from { transform: rotate(-2deg) scale(0.985); }
+  to { transform: rotate(3deg) scale(1.025); }
 }
 
 .hero-copy {
@@ -339,6 +341,7 @@ a {
   max-width: none;
   margin: 0;
   white-space: nowrap;
+  color: var(--hero-title);
 }
 
 .hero-intro {
@@ -414,7 +417,7 @@ a {
   top: 3rem;
   right: -9rem;
   width: 22rem;
-  height: calc(100% - 6rem);
+  height: 22rem;
   opacity: 0.095;
   animation: flow-field-breathe 18s ease-in-out infinite alternate;
 }
@@ -431,7 +434,7 @@ a {
   color: var(--m3c-tertiary);
   opacity: 0.12;
   transform: translateY(-50%);
-  animation: broken-ring-drift 38s linear infinite;
+  animation: broken-ring-drift 18s ease-in-out infinite alternate;
 }
 
 .section-art--projects {
@@ -440,7 +443,7 @@ a {
   width: 31rem;
   color: var(--m3c-secondary);
   opacity: 0.16;
-  animation: bloom-turn 48s linear infinite;
+  animation: bloom-turn 22s ease-in-out infinite alternate;
 }
 
 .section-art--projects line {
@@ -448,19 +451,18 @@ a {
 }
 
 @keyframes flow-field-breathe {
-  from { transform: translate3d(0, -0.75rem, 0) scaleX(0.96); }
-  to { transform: translate3d(-1.5rem, 0.75rem, 0) scaleX(1.04); }
+  from { transform: translate3d(0, -0.6rem, 0) rotate(-2deg) scale(0.98); }
+  to { transform: translate3d(-1rem, 0.6rem, 0) rotate(2deg) scale(1.025); }
 }
 
 @keyframes broken-ring-drift {
-  from { transform: translateY(-50%) rotate(0deg); }
-  to { transform: translateY(-50%) rotate(360deg); }
+  from { transform: translate3d(-0.75rem, -52%, 0) scaleX(0.98); }
+  to { transform: translate3d(0.75rem, -48%, 0) scaleX(1.025); }
 }
 
 @keyframes bloom-turn {
-  from { transform: rotate(0deg) scale(0.97); }
-  50% { transform: rotate(180deg) scale(1.035); }
-  to { transform: rotate(360deg) scale(0.97); }
+  from { transform: rotate(-4deg) translateY(0.5rem) scale(0.98); }
+  to { transform: rotate(5deg) translateY(-0.5rem) scale(1.025); }
 }
 
 .editorial-section:last-child {
@@ -510,8 +512,9 @@ a {
   inset: 0;
   width: 100%;
   height: 100%;
-  color: var(--m3c-primary-container);
-  fill: currentColor;
+  border: 1px solid color-mix(in srgb, var(--m3c-primary) 42%, transparent);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--m3c-primary-container) 76%, transparent);
   transform-origin: center;
   animation: research-bloom 16s linear infinite;
 }
@@ -522,12 +525,16 @@ a {
 }
 
 .section-mark.experience .expressive-shape {
-  color: var(--m3c-tertiary-container);
+  border-color: color-mix(in srgb, var(--m3c-tertiary) 42%, transparent);
+  border-radius: 42% 58% 50% 50%;
+  background: color-mix(in srgb, var(--m3c-tertiary-container) 80%, transparent);
   animation: experience-drift 7.5s linear infinite;
 }
 
 .section-mark.projects .expressive-shape {
-  color: var(--m3c-secondary-container);
+  border-color: color-mix(in srgb, var(--m3c-secondary) 42%, transparent);
+  border-radius: 0.85rem;
+  background: color-mix(in srgb, var(--m3c-secondary-container) 78%, transparent);
   animation: projects-pulse 6.5s linear infinite;
 }
 
@@ -749,11 +756,11 @@ a {
   --m3c-on-surface-variant: #262626;
   --m3c-primary: #171717;
   --m3c-on-secondary-container: #171717;
-  --m3c-surface: #fffbfa;
-  --m3c-surface-container-low: #fff2f0;
-  --m3c-surface-container-highest: #efe1de;
-  --m3c-secondary-container: #ffd9e4;
-  --m3c-tertiary-container: #ebddff;
+  --m3c-surface: #fffdf3;
+  --m3c-surface-container-low: #f1eedb;
+  --m3c-surface-container-highest: #ddd9c5;
+  --m3c-secondary-container: #f7a7a4;
+  --m3c-tertiary-container: #d8e9f7;
   color: #171717;
   background: var(--m3c-surface-container-low);
 }
