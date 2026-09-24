@@ -21,6 +21,9 @@
   --m3-elevation-2: 0 1px 2px rgb(0 0 0 / 0.2), 0 2px 6px 2px rgb(0 0 0 / 0.1);
   --layout-section-space: clamp(2.5rem, 5vw, 4.5rem);
   --outlined-card-border-width: 2px;
+  --shape-tight-corner: 0.35rem;
+  --shape-card-corner: 2rem;
+  --shape-portrait-corner: clamp(2.5rem, 6vw, 5rem);
   /* Trial palette: Pantone P 104-8 C, P 59-2 C, and Snow White #f2f0eb. */
   --m3c-primary: #005dac;
   --m3c-on-primary: #ffffff;
@@ -273,7 +276,7 @@ a {
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(18rem, 0.75fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(20rem, 0.9fr);
   gap: clamp(3rem, 7vw, 7rem);
   align-items: center;
   padding-bottom: var(--layout-section-space);
@@ -346,7 +349,9 @@ a {
   width: 100%;
   height: 100%;
   min-height: 34rem;
-  border-radius: 5rem 1.5rem 5rem 1.5rem;
+  border-radius:
+    var(--shape-portrait-corner) var(--shape-tight-corner)
+    var(--shape-portrait-corner) var(--shape-tight-corner);
   object-fit: cover;
   object-position: center;
   box-shadow:
@@ -448,24 +453,15 @@ a {
 
 .stacked-list .editorial-card > .m3-container {
   border-width: var(--outlined-card-border-width);
+  border-radius:
+    var(--shape-tight-corner) var(--shape-card-corner)
+    var(--shape-card-corner) var(--shape-card-corner);
 }
 
 .editorial-card > .m3-container:hover {
   border-color: color-mix(in srgb, var(--m3c-primary) 45%, var(--m3c-outline-variant));
   box-shadow: var(--m3-elevation-1);
   transform: translateY(-2px);
-}
-
-.stacked-list .editorial-card:nth-child(3n + 1) > .m3-container {
-  border-radius: 2rem 2rem 0.9rem 2rem;
-}
-
-.stacked-list .editorial-card:nth-child(3n + 2) > .m3-container {
-  border-radius: 2rem 0.9rem 2rem 2rem;
-}
-
-.stacked-list .editorial-card:nth-child(3n) > .m3-container {
-  border-radius: 0.9rem 2rem 2rem 2rem;
 }
 
 .item-heading {
@@ -745,7 +741,6 @@ a {
 
   .portrait-frame img {
     max-height: 34rem;
-    border-radius: 3.5rem 1.25rem 3.5rem 1.25rem;
   }
 
   .editorial-section {
@@ -820,7 +815,6 @@ a {
     width: 100%;
     height: clamp(19rem, 108vw, 27rem);
     min-height: 0;
-    border-radius: 2.5rem 1rem 2.5rem 1rem;
   }
 
   .editorial-section {
