@@ -24,7 +24,6 @@
 
 <div class="section-label" data-section-label>
   <span class="section-mark {kind}" aria-hidden="true">
-    <span class="expressive-shape"></span>
     <Icon icon={mark.icon} size={28} />
   </span>
   <h2 class="type-section">{title}</h2>

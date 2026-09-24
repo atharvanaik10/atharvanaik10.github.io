@@ -11,7 +11,6 @@
   import ProjectCard from '../components/ProjectCard.svelte'
   import ResearchItem from '../components/ResearchItem.svelte'
   import SectionLabel from '../components/SectionLabel.svelte'
-  import GenerativeShape from '../components/GenerativeShape.svelte'
 
   const assetUrl = (path) => `${import.meta.env.BASE_URL}${path.replace(/^[/]+/, '')}`
 
@@ -57,15 +56,6 @@
         }
       )
 
-      media.add('(min-width: 681px) and (prefers-reduced-motion: no-preference)', () => {
-        gsap.to('.hero-geometry g', { rotation: 10, scale: 1.035, transformOrigin: 'center', duration: 12, repeat: -1, yoyo: true, ease: 'sine.inOut' })
-        motionRoot.querySelectorAll('[data-parallax]').forEach((art, index) => {
-          gsap.fromTo(art.querySelector('g'),
-            { yPercent: index % 2 ? -6 : 6, rotation: index % 2 ? -3 : 3, transformOrigin: 'center' },
-            { yPercent: index % 2 ? 7 : -7, rotation: index % 2 ? 4 : -4, ease: 'none', scrollTrigger: { trigger: art.closest('[data-section]'), start: 'top bottom', end: 'bottom top', scrub: 1.2 } }
-          )
-        })
-      })
     }, motionRoot)
 
     document.fonts?.ready.then(() => ScrollTrigger.refresh())
@@ -75,7 +65,6 @@
 
 <div class="home-page" bind:this={motionRoot}>
 <section id="about" class="hero-section">
-  <GenerativeShape kind="arcs" className="hero-geometry" />
   <div class="hero-copy">
     <h1 class="type-hero" data-reveal="hero-title">Hello, I'm Atharva.</h1>
     <!-- prettier-ignore -->
@@ -108,7 +97,6 @@
 </section>
 
 <section id="research" class="editorial-section" data-section>
-  <GenerativeShape kind="flow" className="section-art section-art--research" dataParallax={true} />
   <SectionLabel title="Research" kind="research" />
   <div class="section-content stacked-list">
     {#if researchSynopsisHtml}
@@ -121,7 +109,6 @@
 </section>
 
 <section id="experience" class="editorial-section" data-section>
-  <GenerativeShape kind="ring" className="section-art section-art--experience" dataParallax={true} />
   <SectionLabel title="Experience" kind="experience" />
   <div class="section-content stacked-list">
     {#each experiences as exp}
@@ -131,7 +118,6 @@
 </section>
 
 <section id="projects" class="editorial-section" data-section>
-  <GenerativeShape kind="bloom" className="section-art section-art--projects" dataParallax={true} />
   <SectionLabel title="Projects" kind="projects" />
   <div class="section-content project-grid">
     {#each projects as project}
