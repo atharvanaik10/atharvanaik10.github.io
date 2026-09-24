@@ -19,6 +19,8 @@
   --m3-easing-spatial: cubic-bezier(0.2, 0, 0, 1) 450ms;
   --m3-elevation-1: 0 1px 2px rgb(0 0 0 / 0.2), 0 1px 3px 1px rgb(0 0 0 / 0.1);
   --m3-elevation-2: 0 1px 2px rgb(0 0 0 / 0.2), 0 2px 6px 2px rgb(0 0 0 / 0.1);
+  --layout-section-space: clamp(2.5rem, 5vw, 4.5rem);
+  --outlined-card-border-width: 2px;
   /* Trial palette: Pantone P 104-8 C, P 59-2 C, and Snow White #f2f0eb. */
   --m3c-primary: #005dac;
   --m3c-on-primary: #ffffff;
@@ -50,7 +52,6 @@
   --m3c-inverse-surface: #30302a;
   --m3c-inverse-on-surface: #f4f2ed;
   --m3c-inverse-primary: #9ecaff;
-  --hero-title: #005dac;
   --m3c-shadow: #000000;
   --m3c-scrim: #000000;
   --m3-shape-small: 10px;
@@ -91,7 +92,6 @@
   --m3c-inverse-surface: #e6e2d5;
   --m3c-inverse-on-surface: #2f302a;
   --m3c-inverse-primary: #005dac;
-  --hero-title: #f7a7a4;
 }
 
 /* Six reusable typography roles shared by pages, cards, and Markdown output. */
@@ -276,7 +276,7 @@ a {
   grid-template-columns: minmax(0, 1.55fr) minmax(18rem, 0.75fr);
   gap: clamp(3rem, 7vw, 7rem);
   align-items: center;
-  padding-bottom: clamp(5rem, 10vw, 9rem);
+  padding-bottom: var(--layout-section-space);
   border-bottom: 1px solid var(--m3c-outline-variant);
 }
 
@@ -298,7 +298,7 @@ a {
   max-width: none;
   margin: 0;
   white-space: nowrap;
-  color: var(--hero-title);
+  color: var(--m3c-primary);
 }
 
 .hero-intro {
@@ -360,7 +360,7 @@ a {
   display: grid;
   grid-template-columns: minmax(16rem, 20rem) minmax(0, 1fr);
   gap: clamp(2.5rem, 5vw, 4.5rem);
-  padding-block: clamp(5rem, 10vw, 9rem);
+  padding-block: var(--layout-section-space);
   border-bottom: 1px solid var(--m3c-outline-variant);
 }
 
@@ -444,6 +444,10 @@ a {
     border-color var(--m3-easing-fast),
     transform var(--m3-easing-spatial),
     box-shadow var(--m3-easing-fast);
+}
+
+.stacked-list .editorial-card > .m3-container {
+  border-width: var(--outlined-card-border-width);
 }
 
 .editorial-card > .m3-container:hover {
@@ -786,7 +790,6 @@ a {
 
   .hero-section {
     gap: 2rem;
-    padding-bottom: 4.5rem;
   }
 
   .hero-copy {
@@ -822,7 +825,6 @@ a {
 
   .editorial-section {
     gap: 1.5rem;
-    padding-block: 4rem;
   }
 
   .section-label {
