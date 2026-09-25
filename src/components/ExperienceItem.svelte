@@ -1,34 +1,13 @@
 <script>
-  import { Button, Card, Icon } from 'm3-svelte'
-  import iconOpenInNew from '@ktibow/iconset-material-symbols/open-in-new'
-  import ItemSubheading from './ItemSubheading.svelte'
+  import EditorialItem from './EditorialItem.svelte'
   export let exp
 </script>
 
-<article class="editorial-card">
-  <Card variant="outlined">
-    <div class="item-heading">
-      <h3 class="type-title">{exp.company}</h3>
-      <p class="item-period type-meta">{exp.period}</p>
-    </div>
-    <ItemSubheading left={exp.role} right={exp.location} />
-    <div class="prose-lite">{@html exp.html}</div>
-    {#if exp.tech && exp.tech.length}
-      <div class="chip-row">
-        {#each exp.tech as t}
-          <span class="skill-chip">{t}</span>
-        {/each}
-      </div>
-    {/if}
-    {#if exp.links && exp.links.length}
-      <div class="link-row">
-        {#each exp.links as link}
-          <Button variant="tonal" href={link.url} target="_blank" rel="noreferrer" iconType="left">
-            <Icon icon={iconOpenInNew} size={18} />
-            {link.label}
-          </Button>
-        {/each}
-      </div>
-    {/if}
-  </Card>
-</article>
+<EditorialItem
+  title={exp.company}
+  period={exp.period}
+  role={exp.role}
+  location={exp.location}
+  html={exp.html}
+  tech={exp.tech}
+  links={exp.links} />
