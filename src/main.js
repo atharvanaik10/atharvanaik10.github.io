@@ -1,5 +1,6 @@
 import './app.css';
 import './styles/polish.css';
+import './styles/responsive.css';
 import { mount } from 'svelte';
 import App from './App.svelte';
 
