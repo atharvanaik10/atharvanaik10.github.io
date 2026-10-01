@@ -1,0 +1,382 @@
+/*
+ * Responsive adaptation layer.
+ *
+ * The core visual system stays in app.css and polish.css. This file only
+ * changes composition, touch targets, and sizing when the viewport/input
+ * context requires it.
+ */
+
+/* Keep long inline content from creating horizontal page overflow. */
+:where(.hero-intro, .research-synopsis, .prose-lite, .project-description, .footer-inner) {
+  overflow-wrap: anywhere;
+}
+
+/* Tablet / compact desktop: preserve hierarchy and use the available width. */
+@media (max-width: 960px) {
+  .hero-section {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  /* Lead compact layouts with the portrait, then continue into the intro. */
+  .portrait-frame {
+    order: -1;
+    width: min(100%, 40rem);
+    min-height: 0;
+    margin-right: 0;
+    justify-self: start;
+  }
+
+  .portrait-frame img {
+    width: 100%;
+    height: clamp(23rem, 62vw, 31rem);
+    min-height: 0;
+    max-height: none;
+  }
+
+  .editorial-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .site-nav {
+    gap: 1rem;
+  }
+
+  .mobile-menu-panel {
+    z-index: 80;
+    max-height: calc(100dvh - 5.5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .mobile-menu-panel :where(button, [role='menuitem']) {
+    min-height: 3rem;
+  }
+}
+
+/* Phone layout. */
+@media (max-width: 680px) {
+  :root {
+    --layout-section-space: clamp(2.4rem, 10vw, 3.25rem);
+    --shape-card-corner: 1.5rem;
+    --shape-portrait-corner: 2.25rem;
+  }
+
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    min-width: 0;
+  }
+
+  .site-header {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .site-nav,
+  .site-main,
+  .footer-inner {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 78rem;
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .site-nav {
+    min-height: 4rem;
+  }
+
+  .mobile-menu-panel {
+    top: calc(100% + 0.5rem);
+    width: min(19rem, calc(100vw - 2rem));
+  }
+
+  .site-main {
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-section {
+    gap: 2rem;
+    padding-bottom: var(--layout-section-space);
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.4rem, 12vw, 3.35rem);
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  .hero-intro {
+    max-width: none;
+    margin-top: 1.35rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    display: flex !important;
+    width: 100%;
+    max-width: none;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-top: 1.5rem;
+    overflow: visible;
+  }
+
+  /* ConnectedButtons should become three independent, thumb-friendly actions. */
+  .hero-actions > .m3-container {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 3rem;
+    justify-content: center;
+    border-radius: var(--m3-shape-large) !important;
+  }
+
+  .portrait-frame {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .portrait-frame img {
+    width: 100%;
+    height: clamp(19rem, 100vw, 25rem);
+    border-radius:
+      var(--shape-portrait-corner) var(--shape-tight-corner)
+      var(--shape-portrait-corner) var(--shape-tight-corner);
+    object-position: center 32%;
+  }
+
+  .editorial-section {
+    gap: 1.25rem;
+    padding-block: var(--layout-section-space);
+  }
+
+  .section-label {
+    gap: 0.6rem;
+  }
+
+  .section-mark {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .section-label .type-section,
+  .section-heading {
+    font-size: clamp(1.85rem, 9vw, 2.25rem);
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  .research-synopsis {
+    max-width: none;
+    padding-bottom: 0.35rem;
+  }
+
+  .stacked-list {
+    gap: 0.75rem;
+  }
+
+  .editorial-card > .m3-container {
+    padding: 1.1rem;
+  }
+
+  .stacked-list .editorial-card > .m3-container,
+  .project-card:nth-child(n) > .m3-container {
+    border-radius:
+      var(--shape-tight-corner) var(--shape-card-corner)
+      var(--shape-card-corner) var(--shape-card-corner);
+  }
+
+  .item-heading {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .item-heading h3,
+  .project-card h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .item-period {
+    order: -1;
+    margin-top: 0;
+  }
+
+  .item-meta-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-top: 0.45rem;
+  }
+
+  .item-meta-row p:last-child {
+    text-align: left;
+  }
+
+  .prose-lite p {
+    line-height: 1.65;
+  }
+
+  .prose-lite ul {
+    margin-block: 0.9rem;
+    padding-left: 0.4rem;
+  }
+
+  .prose-lite li {
+    padding-left: 0.9rem;
+  }
+
+  .chip-row {
+    gap: 0.3rem;
+    margin-top: 0.7rem;
+  }
+
+  .skill-chip {
+    min-height: 1.7rem;
+    padding: 0.16rem 0.55rem;
+    font-size: 0.78rem;
+  }
+
+  .link-row,
+  .project-link {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .link-row > .m3-container,
+  .project-link > .m3-container {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 2.75rem;
+    justify-content: center;
+  }
+
+  .project-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.8rem;
+  }
+
+  .project-card,
+  .project-card > .m3-container {
+    min-width: 0;
+    height: auto;
+  }
+
+  .project-media {
+    margin-bottom: 1rem;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .project-link {
+    padding-top: 0.85rem;
+  }
+
+  .site-footer {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .footer-inner {
+    min-height: 6rem;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.35rem;
+    line-height: 1.5;
+  }
+}
+
+/* Extra-small phones: reduce chrome, not readable content. */
+@media (max-width: 420px) {
+  .site-nav,
+  .site-main,
+  .footer-inner {
+    padding-left: max(0.875rem, env(safe-area-inset-left));
+    padding-right: max(0.875rem, env(safe-area-inset-right));
+  }
+
+  .site-main {
+    padding-top: 1.25rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.25rem, 11.5vw, 2.85rem);
+  }
+
+  .hero-intro,
+  .research-synopsis,
+  .prose-lite,
+  .project-description {
+    font-size: 0.975rem;
+  }
+
+  .portrait-frame img {
+    height: clamp(18rem, 102vw, 22rem);
+  }
+
+  .editorial-card > .m3-container {
+    padding: 1rem;
+  }
+
+  .section-label .type-section,
+  .section-heading {
+    font-size: clamp(1.75rem, 9vw, 2rem);
+  }
+
+  .footer-inner {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Touch devices should not depend on or visually stick in hover states. */
+@media (hover: none) {
+  .editorial-card > .m3-container:hover {
+    border-color: var(--m3c-outline-variant);
+    background: color-mix(in srgb, var(--m3c-surface-container-lowest) 76%, var(--m3c-surface));
+    transform: none;
+  }
+
+  .project-card:hover .project-image {
+    transform: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .mobile-menu summary,
+  .hero-actions > .m3-container,
+  .link-row > .m3-container,
+  .project-link > .m3-container {
+    min-height: 44px;
+  }
+}
+
+/* Avoid an oversized portrait taking over short landscape phone viewports. */
+@media (max-width: 960px) and (max-height: 500px) and (orientation: landscape) {
+  .site-main {
+    padding-top: 1rem;
+  }
+
+  .portrait-frame {
+    width: min(100%, 32rem);
+  }
+
+  .portrait-frame img {
+    height: 18rem;
+  }
+}
