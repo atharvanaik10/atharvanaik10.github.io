@@ -18,9 +18,9 @@
     align-items: start;
   }
 
-  /* Do not lead the mobile/tablet page with a large portrait. */
+  /* Lead compact layouts with the portrait, then continue into the intro. */
   .portrait-frame {
-    order: 0;
+    order: -1;
     width: min(100%, 40rem);
     min-height: 0;
     margin-right: 0;
