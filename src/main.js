@@ -1,4 +1,5 @@
 import './app.css';
+import './styles/polish.css';
 import { mount } from 'svelte';
 import App from './App.svelte';
 
